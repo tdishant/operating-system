@@ -237,6 +237,8 @@ a {
   color: rgba(244, 98, 58, 0.9);
 }
 
+
+
 @media (max-width: 992px) {
   #about {
     display: flex;
@@ -357,7 +359,7 @@ a {
   justify-content: center;
   align-items: center;
   max-width: 1920px;
-  height: 500px;
+  height: 600px;
 }
 
 .test h2 {
@@ -376,7 +378,7 @@ a {
 @media (max-width: 575.98px) {
   .test {
     height: 270px;
-  }
+
 }
 
 .test2 {
