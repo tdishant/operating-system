@@ -6,7 +6,7 @@ In this project, we have implemented various modules of Operating system from sc
 
 Various modules implemented here are:
 
-1. Disc scheduling algorithms
-2. Deadlock and concurrency
+1. Deadlock and concurrency
+2. Disk scheduling algorithms
 3. Page replacement algorithms
 4. Process scheduling algorithms
