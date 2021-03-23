@@ -29,7 +29,7 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../Team_7/index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../home.html">Home</a></li>
                         
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
                         
@@ -57,11 +57,25 @@
                             <h3 class="text-uppercase text-white font-weight-bold mb-0">BANKER'S ALGORITHM</h3>
                             <div class="hidden1" id="show">
                                 <div class="container">
-                                    <p class="text-white" style="text-align:justify;">
-                                        The banker’s algorithm is a resource allocation and deadlock avoidance algorithm that tests for safety by simulating the allocation for predetermined maximum possible amounts of all resources, then makes an “s-state” check to test for possible activities, before deciding whether allocation should be allowed to continue.
-                                        Banker’s algorithm is named so because it is used in banking system to check whether loan can be sanctioned to a person or not. Suppose there are n number of account holders in a bank and the total sum of their money is S. If a person applies for a loan then the bank first subtracts the loan amount from the total money that bank has and if the remaining amount is greater than S then only the loan is sanctioned. It is done because if all the account holders comes to withdraw their money then the bank can easily do it.
-                                        In other words, the bank would never allocate its money in such a way that it can no longer satisfy the needs of all its customers. The bank would try to be in safe state always.</p>
+                                    <pre style="text-align: left;">
+                                        <p class="text-white justify-content-center">
+Tests for safety by simulating the allocation for predetermined maximum possible amounts of all resources, then makes an “s-state” check to test for possible activities..
+
+Characteristics of Banker's Algorithm
+1. Keep many resources that satisfy the requirement of at least one client
+2. Whenever a process gets all its resources, it needs to return them in a restricted period.
+3. When a process requests a resource, it needs to wait
+4. The system has a limited number of resources
+5. Advance feature for max resource allocation
+
+Disadvantage of Banker's algorithm
+1. Does not allow the process to change its Maximum need while processing
+2. It allows all requests to be granted in restricted time, but one year is a fixed period for that.
+3. All processes must know and state their maximum resource needs in advance.
+                                        </p>
+                                    </pre>
                                 </div>
+                                <a class="btn btn-light btn-l" href="#">More Info</a>
                                 <a class="btn btn-light btn-l" href="banker.html">Demo</a>
                             </div>
                         </div>
@@ -75,6 +89,7 @@
                                 <div class="container">
                                     <p class="text-white">As the name suggests, it replaces the newest page that arrived at last in the main memory.</p>
                                 </div>
+                                <a class="btn btn-light btn-l" href="#">More Info</a>
                                 <a class="btn btn-light btn-l" href="lifo1.html">Demo</a>
                             </div>
                         </div>
@@ -84,8 +99,25 @@
                             <h3 class="text-uppercase text-white font-weight-bold mb-0">LOCK VARIALBE</h3>
                             <div class="hidden1" id="show">
                                 <div class="container">
-                                    <p class="text-white"  style="text-align:justify;">This is the simplest synchronization mechanism. This is a Software Mechanism implemented in User mode. This is a busy waiting solution which can be used for more than two processes. In this mechanism, a Lock variable lockis used. Two values of lock can be possible, either 0 or 1. Lock value 0 means that the critical section is vacant while the lock value 1 means that it is occupied. A process which wants to get into the critical section first checks the value of the lock variable. If it is 0 then it sets the value of lock as 1 and enters into the critical section, otherwise it waits.</p>
+                                    <pre style='text-align: left;'>
+                                        <p class="text-white">
+Simplest synchronization mechanism-implemented in User mode-used for more than two processes.// two values-0,1. 0 means critical section is vacant and 1 means critical section is occupied.
+
+Analysis of Lock Variable
+The lock variable mechanism doesn't provide Mutual Exclusion in some of the cases. This can be better described by looking at the pseudo code by the Operating System point of view I.E. Assembly code of the program. Let's convert the Code into the assembly language.
+
+Load Lock, R0
+CMP R0, #0
+JNZ Step 1
+Store #1, Lock
+Store #0, Lock
+
+The problem with the lock variable mechanism is that, at the same time, more than one process can see the vacant tag and more than one process can enter in the critical section. Hence, the lock variable doesn't provide the mutual exclusion that's why it cannot be used in general.
+Since, this method is failed at the basic step; hence, there is no need to talk about the other conditions to be fulfilled.
+                                        </p>
+                                    </pre>
                                 </div>
+                                <a class="btn btn-light btn-l" href="#">More Info</a>
                                 <a class="btn btn-light btn-l" href="lockvari.html">Demo</a>
                             </div>
                         </div>
@@ -94,11 +126,28 @@
                         <div>
                             <h3 class="text-uppercase text-white font-weight-bold mb-0">TEST SET LOCK</h3>
                             <div class="hidden1" id="show">
-                                <div class="container" style="text-align:justify;">
-                                    <p class="text-white">TestAndSet is a hardware solution to the synchronization problem. In TestAndSet, we have a shared lock variable which can take either of the two values, 0 or 1.
-                                        Before entering into the critical section, a process inquires about the lock. If it is locked, it keeps on waiting until it becomes free and if it is not locked, it takes the lock and executes the critical section.</p>
+                                <div class="container">
+                                    <pre style='text-align: left;'>
+                                        <p class="text-white">
+Synchronization mechanism- uses test and set instructions to provide the synchronization among the processes executing concurrently.
+
+Analysis of Test And Set Lock
+Mutual Exclusion
+Mutual Exclusion is guaranteed in TSL mechanism since a process can never be preempted just before setting the lock variable. Only one process can see the lock variable as 0 at a particular time and that's why, the mutual exclusion is guaranteed.
+
+Progress
+According to the definition of the progress, a process which doesn't want to enter in the critical section should not stop other processes to get into it. In TSL mechanism, a process will execute the TSL instruction only when it wants to get into the critical section. The value of the lock will always be 0 if no process doesn't want to enter into the critical section hence the progress is always guaranteed in TSL.
+
+Bounded Waiting
+Bounded Waiting is not guaranteed in TSL. Some process might not get a chance for so long. We cannot predict for a process that it will definitely get a chance to enter in critical section after a certain time.
+
+Architectural Neutrality
+TSL doesn't provide Architectural Neutrality. It depends on the hardware platform. The TSL instruction is provided by the operating system. Some platforms might not provide that. Hence it is not Architectural natural.
+                                        </p>
+                                    </pre>
                                 </div>
-                               <a class="btn btn-light btn-l" href="test_set.html">Demo</a>
+                                <a class="btn btn-light btn-l" href="#">More Info</a>
+                                <a class="btn btn-light btn-l" href="test_set.html">Demo</a>
                             </div>
                         </div>
                     </div>
@@ -107,8 +156,9 @@
                             <h3 class="text-uppercase text-white font-weight-bold mb-0">TURN VARIABLE</h3>
                             <div class="hidden1" id="show">
                                 <div class="container">
-                                    <p class="text-white" style="text-align:justify;">Turn variable Approach is the software mechanism implemented at user mode. It is a busy waiting solution which can be implemented only for two processes. In this approach, A turn variable is used which is actually a lock. This approach can only be used for only two processes. In general, let the two processes be P0 and P1. They share a variable called turn variable. The execution of the algorithm can be seen in following steps.</p>
+                                    <p class="text-white">Software mechanism implemented at user mode-only for two processes. It is a lock shared by two processes.</p>
                                 </div>
+                                <a class="btn btn-light btn-l" href="#">More Info</a>
                                 <a class="btn btn-light btn-l" href="turnvari.html">Demo</a>
                             </div>
                         </div>
@@ -118,8 +168,9 @@
                             <h3 class="text-uppercase text-white font-weight-bold mb-0">PERTERSON METHOD</h3>
                             <div class="hidden1" id="show">
                                 <div class="container">
-                                    <p class="text-white" style="text-align:justify;">Peterson’s solution provides a good algorithmic description of solving the critical-section problem and illustrates some of the complexities involved in designing software that addresses the requirements of mutual exclusion, progress, and bounded waiting. Peterson's algorithm is considered a standard low-level algorithm for two-thread mutual exclusion.</p>
+                                    <p class="text-white">Concurrent programming algorithm for mutual exclusion that allows two or more processes to share a single-use resource without conflict, using only shared memory for communication.</p>
                                 </div>
+                                <a class="btn btn-light btn-l" href="#">More Info</a>
                                 <a class="btn btn-light btn-l" href="peterson.html">Demo</a>
                             </div>
                         </div>
@@ -129,8 +180,9 @@
                             <h3 class="text-uppercase text-white font-weight-bold mb-0">PRODUCER CONSUMER</h3>
                             <div class="hidden1" id="show">
                                 <div class="container">
-                                    <p class="text-white" style="text-align:justify;">The Producer-Consumer problem is a classical multi-process synchronization problem, that is we are trying to achieve synchronization between more than one process. There is one Producer in the producer-consumer problem, Producer is producing some items, whereas there is one Consumer that is consuming the items produced by the Producer. The same memory buffer is shared by both producers and consumers which is of fixed-size. The task of the Producer is to produce the item, put it into the memory buffer, and again start producing items. Whereas the task of the Consumer is to consume the item from the memory buffer.</p>
+                                    <p class="text-white">Synchronization problem. The producer produces items and enters them into the fixed size buffer. The consumer removes the items from the buffer and consumes them</p>
                                 </div>
+                                <a class="btn btn-light btn-l" href="#">More Info</a>
                                 <a class="btn btn-light btn-l" href="producer.html">Demo</a>
                             </div>
                         </div>
@@ -144,6 +196,7 @@
                                 <div class="container">
                                     <p class="text-white">As the name suggests, this algorithm randomly replaces any page.</p>
                                 </div>
+                                <a class="btn btn-light btn-l" href="#">More Info</a>
                                 <a class="btn btn-light btn-l" href="#">Demo</a>
                             </div>
                         </div>
@@ -153,9 +206,9 @@
                             <h2 class="text-uppercase text-white font-weight-bold mb-0">COUNTING SEMAPHORE</h2>
                             <div class="hidden1" id="show">
                                 <div class="container">
-                                    <p class="text-white"  style="text-align:justify;" >
-                                        There are the scenarios in which more than one processes need to execute in critical section simultaneously. However, counting semaphore can be used when we need to have more than one process in the critical section at the same time. The programming code of semaphore implementation is shown below which includes the structure of semaphore and the logic using which the entry and the exit can be performed in the critical section.</p>
+                                    <p class="text-white">It uses a count that helps task to be acquired or released numerous times.</p>
                                 </div>
+                                <a class="btn btn-light btn-l" href="#">More Info</a>
                                 <a class="btn btn-light btn-l" href="counting_semaphore.html">Demo</a>
                             </div>
                         </div>
@@ -165,12 +218,9 @@
                             <h2 class="text-uppercase text-white font-weight-bold mb-0">BINARY SEMAPHORE</h2>
                             <div class="hidden1" id="show">
                                 <div class="container">
-                                    <p class="text-white" style="text-align:justify;">
-                                        
-                                        To get rid of the problem of wasting the wake-up signals, Dijkstra proposed an approach which involves storing all the wake-up calls. Dijkstra states that, instead of giving the wake-up calls directly to the consumer, producer can store the wake-up call in a variable. Any of the consumers can read it whenever it needs to do so. Semaphore is the variables which storesthe entire wake up calls that are being transferred from producer to consumer. It is a variable on which read, modify and update happens automatically in kernel mode. Semaphore cannot be implemented in the user mode because race condition may always arise when two or more processes try to access the variable simultaneously. It always needs support from the operating system to be implemented.
-
-                                        In counting semaphore, Mutual exclusion was not provided because we has the set of processes which required to execute in the critical section simultaneously. However, Binary Semaphore strictly provides mutual exclusion. Here, instead of having more than 1 slots available in the critical section, we can only have at most 1 process in the critical section. The semaphore can have only two values, 0 or 1. Let's see the programming implementation of Binary Semaphore.</p>
+                                    <p class="text-white">Has 0 and 1 value.  The wait operation only works when the semaphore is 1 and the signal operation succeeds when semaphore is 0</p>
                                 </div>
+                                <a class="btn btn-light btn-l" href="#">More Info</a>
                                 <a class="btn btn-light btn-l" href="binary_semaphore.html">Demo</a>
                             </div>
                         </div>
