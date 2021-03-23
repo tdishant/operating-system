@@ -1,0 +1,427 @@
+<html>
+    <head>
+        <title>Disc Scheduling Algorithms</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="DSA_css/lifo1.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            canvas{
+            margin-top: 80px;
+            margin-right: 0%;
+            margin-left: 0%;
+            width: 100%!important;
+            height: 450px!important;
+            /*transform: rotate(90deg);*/
+          }
+        </style>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-1" id="mainNav">
+            <div class="container">
+                
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="DSA_index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="DSA_index.html#portfolio">Algorithms</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="sections pt-3 mt-3">
+            <section class="left mr-4">
+                <div class="container-contact100">
+                    <div class="wrap-contact100">
+                        <span class="contact100-form-title">
+                            C-LOOK Algorithm
+                        </span>
+                        <label for="frames">Current Track Position :</label>
+                        <div class="wrap-input100">
+                            <input class="input100" type="text" id="frames" placeholder="Enter current track position">
+                            <span class="focus-input100"></span>
+                        </div>
+                        <label for="istring">Track Number:</label>
+                        <div class="wrap-input100 mb-6">
+                            <input class="input100" id="inputname" type="text" placeholder="Enter queue contains track number">
+                            <span class="focus-input100"></span>
+                        </div>
+                        <label for="istring">Direction :</label>
+                        <div class="wrap-input100 mb-5">
+                            <input class="input100" id="addlr" type="text" placeholder="Enter left or right">
+                            <span class="focus-input100"></span>
+                        </div>
+                        <button class="contact100-form-btn submit" id="addbtn" type='button'>
+                            <span>
+                                Submit
+                            </span>
+                        </button>
+                        <p>&nbsp&nbsp&nbsp&nbsp;</p>
+                        <button class="contact100-form-btn submit" id="caddbtn" type='button'>
+                            <span>
+                                Calculate
+                            </span>
+                        </button>
+                        <p>&nbsp&nbsp&nbsp&nbsp;</p>
+                        <button class="contact100-form-btn submit" id="show" type='button'>
+                            <span>
+                                Show Graph
+                            </span>
+                        </button>
+                        
+                    </div>
+                </div>
+            </section>
+            
+
+            <section class="right">
+                <span class="contact100-form-title pt-3 pb-0">Output</span>
+
+                <div class="contact100 pt-3 pb-0" id="result">
+                    <div>
+                        <p id='result'></p>
+                    </div>
+                </div>
+
+                <div class="contact100 pt-3 pb-0" id="result1">
+                    <div>
+                        <p id='result1'></p>
+                    </div>
+                </div>
+
+                <div class="contact100 pt-3 pb-0" id="result2">
+                    <div>
+                        <p id='result2'></p>
+                    </div>
+                </div>
+
+                <div class="contact100 pt-3 pb-0" id="result3">
+                    <div>
+                        <p id='result3'></p>
+                    </div>
+                </div>
+                <div id="chartContainer" style="height: 300px; width: 100%;">
+                </div>
+
+                <div>    
+                    <script> 
+
+                        function gettrackno() {
+                            var trackno = document.getElementById('inputname').value;
+                            var result = document.getElementById('result');
+                            var ctrack = document.getElementById('frames').value;
+                    
+                            
+                            document.getElementById('result').innerHTML ='Your Track Numbers Are : ' + trackno;
+                               
+                            document.getElementById('result1').innerHTML ='Your Current Track Position Is : ' + ctrack;
+                            }
+                            var subButton = document.getElementById('addbtn');
+                            subButton.addEventListener('click', gettrackno, false); 
+
+                    </script>
+                </div>
+                <div>
+                    <script>
+                        function calculate(){
+                            
+                            var dummy = document.getElementById('inputname').value.split(" "); 
+                            var ctrack = document.getElementById("frames").value;
+                            
+
+                            var dir = document.getElementById("addlr").value; 
+                            ctrack = parseInt(ctrack); 
+                            var size = dummy.length;
+                            //var disk_size = 200;
+
+                            var arr = new Array(size);
+                            for(var j=0; j<size; j++)
+                            {
+                                var z = dummy[j];
+                                arr[j] = parseInt(z);
+                            }
+                            console.log(arr);
+                            
+                            var left=[];
+                            var right=[];
+
+                            /*if(dir=="left")
+                            {
+                                left.push(0);
+                            }
+                            else if(dir=="right")
+                            {
+                                right.push(disk_size-1);
+                            }*/
+
+                            for (var i = 0; i < size; i++) 
+                            {
+                                if (arr[i] < ctrack)
+                                    left.push(arr[i]);
+                                if (arr[i] > ctrack)
+                                    right.push(arr[i]);
+                            }
+
+                            left.sort(function(a, b){return a - b});
+                            right.sort(function(a, b){return a - b});
+                            console.log("left->",left);
+                            console.log("right->",right);
+      
+                            var cur_track;
+                            var run = 2;
+                            var seek_sequence = Array();
+                            if(dir == "right")
+                            {
+                            while ((run) >0)
+                            {
+                                if (dir == "left") 
+                                {
+                                    for (var i = 0; i < left.length; i++) 
+                                    {
+                                        cur_track = left[i];
+ 
+                                        // appending current track to seek sequence
+                                        seek_sequence.push(cur_track);
+                                    }
+                                    dir = "right";
+                                }
+                                else if (dir == "right") 
+                                {
+                                    for (var i = 0; i < right.length; i++) 
+                                    {   
+                                        cur_track = right[i];
+            
+                                        // appending current track to seek sequence
+                                        seek_sequence.push(cur_track);
+                                    }
+                                    dir = "left";
+                                }
+                                run=run-1;
+                            }
+                            }
+                            else if(dir == "left")
+                            {
+                                while ((run) >0)
+                                {
+                                if (dir == "left") 
+                                {
+                                    for (var i = left.length-1; i >=0; i--) 
+                                    {
+                                        cur_track = left[i];
+ 
+                                        // appending current track to seek sequence
+                                        seek_sequence.push(cur_track);
+                                    }
+                                    dir = "right";
+                                }
+                                else if (dir == "right") 
+                                {
+                                    for (var i = right.length-1; i >=0; i--) 
+                                    {   
+                                        cur_track = right[i];
+            
+                                        // appending current track to seek sequence
+                                        seek_sequence.push(cur_track);
+                                    }
+                                    dir = "left";
+                                }
+                                run=run-1;
+                                } 
+                            }
+
+                            dummy.unshift(ctrack);
+                            seek_sequence.unshift(ctrack);
+                            var seek=0;
+
+                            for(i=1;i<seek_sequence.length;i++)
+                            {
+                                seek=seek+Math.abs(seek_sequence[i]-seek_sequence[i-1]);
+                            }
+                            document.getElementById('result2').innerHTML ="Order of execution = " +seek_sequence;
+        
+                            document.getElementById('result3').innerHTML ="Total Seek Time = "+seek;
+        
+                            }
+                            var subButton1 = document.getElementById('caddbtn');
+                            subButton1.addEventListener('click', calculate, false);
+
+                    </script> 
+                </div>   
+                <div>
+                    <script>
+                        function graph () {
+
+                            var dummy = document.getElementById('inputname').value.split(" "); 
+                            var ctrack = document.getElementById("frames").value;
+                            
+
+                            var dir = document.getElementById("addlr").value; 
+                            ctrack = parseInt(ctrack); 
+                            var size = dummy.length;
+                            //var disk_size = 200;
+
+                            var arr = new Array(size);
+                            for(var j=0; j<size; j++)
+                            {
+                                var z = dummy[j];
+                                arr[j] = parseInt(z);
+                            }
+                            console.log(arr);
+                            
+                            var left=[];
+                            var right=[];
+
+                            /*if(dir=="left")
+                            {
+                                left.push(0);
+                            }
+                            else if(dir=="right")
+                            {
+                                right.push(disk_size-1);
+                            }*/
+
+                            for (var i = 0; i < size; i++) 
+                            {
+                                if (arr[i] < ctrack)
+                                    left.push(arr[i]);
+                                if (arr[i] > ctrack)
+                                    right.push(arr[i]);
+                            }
+
+                            left.sort(function(a, b){return a - b});
+                            right.sort(function(a, b){return a - b});
+                            console.log("left->",left);
+                            console.log("right->",right);
+      
+                            var cur_track;
+                            var run = 2;
+                            var seek_sequence = Array();
+
+                            if(dir == "right")
+                            {
+                            while ((run) >0)
+                            {
+                                if (dir == "left") 
+                                {
+                                    for (var i = 0; i < left.length; i++) 
+                                    {
+                                        cur_track = left[i];
+ 
+                                        // appending current track to seek sequence
+                                        seek_sequence.push(cur_track);
+                                    }
+                                    dir = "right";
+                                }
+                                else if (dir == "right") 
+                                {
+                                    for (var i = 0; i < right.length; i++) 
+                                    {   
+                                        cur_track = right[i];
+            
+                                        // appending current track to seek sequence
+                                        seek_sequence.push(cur_track);
+                                    }
+                                    dir = "left";
+                                }
+                                run=run-1;
+                            }
+                            }
+                            else if(dir == "left")
+                            {
+                                while ((run) >0)
+                            {
+                                if (dir == "left") 
+                                {
+                                    for (var i = left.length-1; i >=0; i--) 
+                                    {
+                                        cur_track = left[i];
+ 
+                                        // appending current track to seek sequence
+                                        seek_sequence.push(cur_track);
+                                    }
+                                    dir = "right";
+                                }
+                                else if (dir == "right") 
+                                {
+                                    for (var i = right.length-1; i >=0; i--) 
+                                    {   
+                                        cur_track = right[i];
+            
+                                        // appending current track to seek sequence
+                                        seek_sequence.push(cur_track);
+                                    }
+                                    //dir = "left";
+                                }
+                                run=run-1;
+                            } 
+                            }
+
+
+                            dummy.unshift(ctrack);
+                            seek_sequence.unshift(ctrack);
+                            
+                            console.log(ctrack);
+                            console.log(seek_sequence);
+    
+                            var chart = new CanvasJS.Chart("chartContainer", 
+                            {
+                                animationEnabled: true,
+                                animationDuration: 7000,
+                                theme: "dark2",
+                                axisX:{
+                                    interval:1,
+                                    labelAngle: 0,
+                                    labelFontSize: 10,      
+                                      },
+                                  axisY:{ 
+                                    labelAngle: 0,
+                                    labelFontSize: 10,
+                                    },
+        
+                                data: [{        
+                                    type: "line",
+            
+                                    indexLabelFontSize: 16,
+                                    dataPoints: [
+                                        { y: parseInt(seek_sequence[0],10) },
+                                        { y: parseInt(seek_sequence[1],10) },
+                                        { y: parseInt(seek_sequence[2],10) },
+                                        { y: parseInt(seek_sequence[3],10) },
+                                        { y: parseInt(seek_sequence[4],10) },
+                                        { y: parseInt(seek_sequence[5],10) },
+                                        { y: parseInt(seek_sequence[6],10) },
+                                        { y: parseInt(seek_sequence[7],10) },
+                                        { y: parseInt(seek_sequence[8],10) },
+                                        { y: parseInt(seek_sequence[9],10) },
+                                        { y: parseInt(seek_sequence[10],10) },
+                                        { y: parseInt(seek_sequence[11],10) },
+                                        { y: parseInt(seek_sequence[12],10) },
+                                        { y: parseInt(seek_sequence[13],10) },
+                                        { y: parseInt(seek_sequence[14],10) }
+                                    ]
+                                }]
+                            });
+                            chart.render();
+    
+                            }
+    
+                            var subButton2 = document.getElementById('show');
+                            subButton2.addEventListener('click', graph, false); 
+
+                    </script>
+                </div>
+
+                <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                  
+                  
+
+                  
+            
+
+                
+               
+            </section>
+        </div>
+    </body>
+</html>
