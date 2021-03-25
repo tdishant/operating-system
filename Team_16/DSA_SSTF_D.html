@@ -10,58 +10,62 @@
             top: 20px; 
             border: none; 
             height: 2px; 
-            background: black; 
+            background: #bdbdbd; 
             margin-bottom: 50px; 
         } 
         </style>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-1" id="mainNav">
+        <header class="masthead">
             <div class="container">
-                
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="DSA_index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="DSA_SSTF.html">Visualization</a></li>
-                    </ul>
-                </div>
+                <nav class="navbar navbar-expand-lg navbar-light fixed-top py-1" id="mainNav">
+                    <div class="container">
+                        
+                        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                            <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                                <li class="nav-item"><a class="nav-link" href="DSA_index.html#portfolio">Algorithms</a></li>
+                                <li class="nav-item"><a class="nav-link" href="DSA_SSTF.html">Visualization</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
             </div>
-        </nav>
-        <div class="sections pt-3 mt-3">
-            <section class="center">
-            </br>
-                <b><span class="contact100-form-title pt-3 pb-1" style="color:black">SSTF : Shortest-Seek-Time-First</span></b><hr></br></br>
-                <p  style="color: black; text-align: justify; font-size: 22px;">SSTF is another type of scheduling algorithm. In this type of disk scheduling, the job which has less seek time will be executed first. So, in SSTF (shortest seek time first) scheduling, we have to calculate the seek time first. and after calculating the seek time, each request will be served on the basis of seek time. The request which is close to the disk arm will be first executed. There are some drawbacks in FCFS. To overcome the limitations that arise in the FCFS. SSTF scheduling is implemented.</p>
-            </br>
-            <p style="color: black; font-size: 27px;"> Advantages :</p>
-            <p >
-                <ul>
-                    <li style="color: black; font-size: 22px;">            
-                        In SSTF disk scheduling, the average response time is decreased.
-                    </li><li style="color: black; font-size: 22px;">
-                        Increased throughput.
-                    </li>
-                </ul> 
-            </p>
-        </br> 
-            <p style="color: black; font-size: 27px;"> Disadvantages :</p>
-            <p >
-                <ul>
-                    <li style="color: black; font-size: 22px;">            
-                        In SSTF, there may be a chance of starvation.
-                    </li><li style="color: black; font-size: 22px;">
-                        SSTF is not an optimal algorithm.
-                    </li>
-                    <li style="color: black; font-size: 22px;">            
-                        There are chances of overhead in SSTF disk scheduling because, in this algorithm, we have to calculate the seek time in advanced.
-                    </li><li style="color: black; font-size: 22px;">
-                        The speed of this algorithm can be decreased because direction could be switched frequently.
-                    </li>
-                </ul> 
-            </p>
-            </section>
-        </div>
-        
+                <div class="sections pt-3 mt-3">
+                    <section class="center">
+                    </br>
+                        <b><span class="contact100-form-title pt-3 pb-1" style="color:#009688">SSTF : Shortest-Seek-Time-First</span></b><hr></br></br>
+                        <p  style="color: #bdbdbd; text-align: justify; font-size: 20px;">SSTF is another type of scheduling algorithm. In this type of disk scheduling, the job which has less seek time will be executed first. So, in SSTF (shortest seek time first) scheduling, we have to calculate the seek time first. and after calculating the seek time, each request will be served on the basis of seek time. The request which is close to the disk arm will be first executed. There are some drawbacks in FCFS. To overcome the limitations that arise in the FCFS. SSTF scheduling is implemented.</p>
+                    </br>
+                    <p style="color: #009688; font-size: 25px;"> Advantages :</p>
+                    <p >
+                        <ul>
+                            <li style="color: #bdbdbd; font-size: 20px;">            
+                                In SSTF disk scheduling, the average response time is decreased.
+                            </li><li style="color: #bdbdbd; font-size: 20px;">
+                                Increased throughput.
+                            </li>
+                        </ul> 
+                    </p>
+                </br> 
+                    <p style="color: #009688; font-size: 25px;"> Disadvantages :</p>
+                    <p >
+                        <ul>
+                            <li style="color: #bdbdbd; font-size: 20px;">            
+                                In SSTF, there may be a chance of starvation.
+                            </li><li style="color: #bdbdbd; font-size: 20px;">
+                                SSTF is not an optimal algorithm.
+                            </li>
+                            <li style="color: #bdbdbd; font-size: 20px;">            
+                                There are chances of overhead in SSTF disk scheduling because, in this algorithm, we have to calculate the seek time in advanced.
+                            </li><li style="color: #bdbdbd; font-size: 20px;">
+                                The speed of this algorithm can be decreased because direction could be switched frequently.
+                            </li>
+                        </ul> 
+                    </p>
+                    </section>
+                </div>
+            
+        </header>
     </body>
 </html>

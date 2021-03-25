@@ -133,7 +133,6 @@
                             var dir = document.getElementById("addlr").value; 
                             ctrack = parseInt(ctrack); 
                             var size = dummy.length;
-                            //var disk_size = 200;
 
                             var arr = new Array(size);
                             for(var j=0; j<size; j++)
@@ -145,15 +144,6 @@
                             
                             var left=[];
                             var right=[];
-
-                            /*if(dir=="left")
-                            {
-                                left.push(0);
-                            }
-                            else if(dir=="right")
-                            {
-                                right.push(disk_size-1);
-                            }*/
 
                             for (var i = 0; i < size; i++) 
                             {
@@ -259,8 +249,7 @@
                             var dir = document.getElementById("addlr").value; 
                             ctrack = parseInt(ctrack); 
                             var size = dummy.length;
-                            //var disk_size = 200;
-
+                        
                             var arr = new Array(size);
                             for(var j=0; j<size; j++)
                             {
@@ -271,15 +260,6 @@
                             
                             var left=[];
                             var right=[];
-
-                            /*if(dir=="left")
-                            {
-                                left.push(0);
-                            }
-                            else if(dir=="right")
-                            {
-                                right.push(disk_size-1);
-                            }*/
 
                             for (var i = 0; i < size; i++) 
                             {
@@ -367,6 +347,7 @@
                             var chart = new CanvasJS.Chart("chartContainer", 
                             {
                                 animationEnabled: true,
+                                exportEnabled: true,
                                 animationDuration: 7000,
                                 theme: "dark2",
                                 axisX:{
@@ -413,13 +394,6 @@
                 </div>
 
                 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-                  
-                  
-
-                  
-            
-
-                
                
             </section>
         </div>

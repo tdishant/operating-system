@@ -10,6 +10,15 @@ body {
 .sections {
 display: flex;
 }
+header.masthead {
+  padding-top: 1rem;
+  padding-bottom: calc(10rem - 6.2rem);
+  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ8imNyd_nq8rNK8Ngp_04-MTr5pFUtF-lyoQ&usqp=CAU");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: 1600px 1000px;
+}
 
 .left div {
 background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("https://www.njea.org/wp-content/uploads/2014/10/Coding.jpg");

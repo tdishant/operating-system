@@ -100,8 +100,6 @@
                 <div>    
                     <script> 
 
-                        
-
                         function gettrackno() {
                             var trackno = document.getElementById('inputname').value;
                             var result = document.getElementById('result');
@@ -113,9 +111,7 @@
                             document.getElementById('result1').innerHTML ='Your Current Track Position Is : ' + ctrack;
                             }
                             var subButton = document.getElementById('addbtn');
-                            subButton.addEventListener('click', gettrackno, false); 
-
-                        
+                            subButton.addEventListener('click', gettrackno, false);    
                     </script>
                 </div>
                 <div>
@@ -217,6 +213,7 @@
                         var chart = new CanvasJS.Chart("chartContainer", 
                         {
                             animationEnabled: true,
+                            exportEnabled: true,
                             animationDuration: 7000,
 	                        theme: "dark2",
 	                        axisX:{
@@ -263,71 +260,7 @@
                 </div>
 
                 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>  
-
-
-                
-                  
-                  
-
-                  
-            
-                <!--arr.unshift(ctrack);
-
-                            
-                            /*var used = Array();
-                            var myarr = new Array(dummy.length);
-                            var h = parseInt(ctrack);
-                            var d;
-
-                            for(var j=0; j<dummy.length; j++)
-                            {
-                                //used[j] = 1;
-                                var min = parseInt(dummy[j]);
-                                var z = parseInt(dummy[j]);
-
-                                for(var m=0; m<dummy.length; m++)
-                                {
-                                    
-                                    if(min>Math.abs(h-dummy[m])&&(!used.includes(m) || j==0)) 
-                                    {
-                                        used.push(m);
-                                        d=m;
-                                        min = ( Math.abs(h-dummy[m]) );
-                                    }
-                                }
-                                myarr.push(dummy[d]);
-                                h = d;
-                                
-                            }-->
-                
-                <!--<div id="carouselExampleIndicators" class="carousel slide d-none" data-interval="false"></div>
-                <div class="hidden2 d-none">
-                    <ol class="carousel-indicators"></ol>
-                    <div class="carousel-inner"></div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-                <div id="chart" class="">
-                    <div id="graph" class="pt-3"></div>
-                    <div class="chart-container pt-2" style="position: relative;"></div>
-                    <div id="last"></div>
-                </div>
-                <div id="btn1"></div>-->
             </section>
         </div>
-        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-        Third party plugin JS
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-        <script src="js/scripts.js"></script>
-        <script src="js/fifo.js"></script>-->
     </body>
 </html>

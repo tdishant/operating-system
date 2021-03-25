@@ -5,9 +5,9 @@ html {
 }
 
 hr.divider {
-  max-width: 3.25rem;
+  max-width: 7rem;
   border-width: 0.2rem;
-  border-color: #f4623a;
+  border-color: #eeeeee;
 }
 
 hr.light {
@@ -220,6 +220,10 @@ a {
   letter-spacing: 0.4em;
 }
 .pic7 {
+  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ8imNyd_nq8rNK8Ngp_04-MTr5pFUtF-lyoQ&usqp=CAU");
+  letter-spacing: 0.4em;
+}
+.pic8 {
   background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ8imNyd_nq8rNK8Ngp_04-MTr5pFUtF-lyoQ&usqp=CAU");
   letter-spacing: 0.4em;
 }
