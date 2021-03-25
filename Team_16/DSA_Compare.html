@@ -2,7 +2,7 @@
     <head>
         <title>Disc Scheduling Algorithms</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link rel="stylesheet" href="DSA_css/lifo1.css">
+        <link rel="stylesheet" href="DSA_css/compare.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
         <style>
             hr { 
@@ -10,7 +10,7 @@
             top: 20px; 
             border: none; 
             height: 2px; 
-            background: black; 
+            background: #bdbdbd; 
             margin-bottom: 50px; 
         } canvas{
                 margin-top: 80px;
@@ -40,72 +40,442 @@
             
             <div class="sections pt-3 mt-3">
                 <section class="center">
-                    <b><span class="contact100-form-title pt-3 pb-1 "style="color:black">Comparison</span></b><hr></br>
-                    <p  style="color: black; text-align: justify; font-size: 20px;">As we know, a process needs 2 types of time, CPU time and I/O time. For I/O, it requests the operating system to access the disk. However, the operating system must be fare enough to satisfy each request and at the same time, operating system must maintain the efficiency and speed of process execution. The technique that operating system uses to determine the request which is to be satisfied next is called disk scheduling.</p>
-                    <p style="color: black; text-align: justify; font-size: 20px;">The main purpose of disk scheduling algorithm is to select a disk request from the queue of I/O requests and decide the schedule when this request will be processed.</p>
+                    <b><span class="contact100-form-title pt-3 pb-1 "style="color:#bdbdbd">Comparison</span></b><hr></br>
+                    <p  style="color: #bdbdbd; text-align: justify; font-size: 20px;">As we know, a process needs 2 types of time, CPU time and I/O time. For I/O, it requests the operating system to access the disk. However, the operating system must be fare enough to satisfy each request and at the same time, operating system must maintain the efficiency and speed of process execution. The technique that operating system uses to determine the request which is to be satisfied next is called disk scheduling.</p>
+                    <p style="color: #bdbdbd; text-align: justify; font-size: 20px;">The main purpose of disk scheduling algorithm is to select a disk request from the queue of I/O requests and decide the schedule when this request will be processed.</p>
                 </br>
-                <p style="color: black; text-align: justify; font-size: 20px;"><b>SEEK TIME :</b> Seek time is the time taken in locating the disk arm to a specified track where the read/write request will be satisfied.</p>
-                <p style="color: black; text-align: justify; font-size: 20px;"><b>RESPONSE TIME :</b> It is the average of time spent by each request waiting for the I/O operation.</p>
+                <p style="color: #bdbdbd; text-align: justify; font-size: 20px;"><b>SEEK TIME :</b> Seek time is the time taken in locating the disk arm to a specified track where the read/write request will be satisfied.</p>
+                <p style="color: #bdbdbd; text-align: justify; font-size: 20px;"><b>RESPONSE TIME :</b> It is the average of time spent by each request waiting for the I/O operation.</p>
                 </br>
                 <p >
                     <ul>
-                        <li style="color: black; font-size: 20px;">            
+                        <li style="color: #bdbdbd; font-size: 20px;">            
                             <b>FCFS :</b> In FCFS, the requests are addressed in the sequence they come in the disk queue. This algorithm is simple and easy to implement, but it might be possible that best services may not be delivered.
                         </li>
                         </br>
-                        <li style="color: black; font-size: 20px;">
+                        <li style="color: #bdbdbd; font-size: 20px;">
                             <b>SSTF :</b> In SSTF, execution of requests having the shortest seek time takes place first. So, in advance, the seek time of every request is calculated in the queue. Then they are scheduled according to their seek time as it is calculated. As a result, the request closer to the disk arm will be executed first. SSTF is certainly better over FCFS because it reduces the average response time and improves the throughput of the system.
                         </li>
                         </br>
-                        <li style="color: black; font-size: 20px;">
+                        <li style="color: #bdbdbd; font-size: 20px;">
                             <b>SCAN :</b> In SCAN, the disk arm moves into a particular direction till the end, satisfying all the requests coming in its path,and then it turns backand moves in the reverse direction satisfying requests coming in its path. So, this algorithm also recognized as elevator algorithm. As a result, the requests at the midrange are serviced more and those incoming behind the disk arm will have to wait.
                         </li>
                         </br>
-                        <li style="color: black; font-size: 20px;">
+                        <li style="color: #bdbdbd; font-size: 20px;">
                             <b>C-SCAN :</b> In C-SCAN, the arm of the disk moves in a particular direction servicing requests till the end, then it jumps to the end of the opposite direction without servicing any request then it turns back and start moving in that direction servicing the remaining requests. So, the disk arm transfers in a circular fashion and this algorithm is also like SCAN algorithm, hence it is known as C-SCAN.
                         </li>
                         </br>
-                        <li style="color: black; font-size: 20px;">
+                        <li style="color: #bdbdbd; font-size: 20px;">
                             <b>LOOK :</b> It is like the SCAN disk scheduling algorithm but the change is that the disk arm in spite of going to the end of the disk goes only to the last request to be checked in front of the head and then returns its direction from there only. Therefore, it avoids the additional postponement which arose due to pointless traversal to the last of the disk.
                         </li>
                         </br>
-                        <li style="color: black; font-size: 20px;">
+                        <li style="color: #bdbdbd; font-size: 20px;">
                             <b>C-LOOK :</b> C-LOOK is alike to C-SCAN disk scheduling algorithm. In C-LOOK, the disk arm in spite of going to the end, it goes only to the last request to be examined in front of the head and then from there moves to the other end’s last request. Thus, it also stops the additional delay which happened due to needless traversal to the end of the disk.
                         </li>
                     </ul> 
                 </p>
-                </br>
-                <p style="color: black; text-align: justify; font-size: 20px;"><b> EXAMPLE </b></p>
-                <p style="color: black; text-align: justify; font-size: 20px;">Consider the following disk request sequence for a disk with 200 tracks.<br>Track Sequence : 82 170 43 140 24 16 190<br>Head : 50<br><br>Seek Time :</p>
-                <p >
-                    <ol>
-                        <li style="color: black; font-size: 20px;">            
-                            FCFS &ensp;&ensp;&ensp;&ensp; = 642
-                        </li>
-                        <li style="color: black; font-size: 20px;">            
-                            SSTF &ensp;&ensp;&ensp;&ensp; = 208
-                        </li>
-                        <li style="color: black; font-size: 20px;">            
-                            SCAN &ensp;&ensp;&ensp;  = (left) 240 , (right) 332
-                        </li>
-                        <li style="color: black; font-size: 20px;">            
-                            C-SCAN = (left) 366 , (right) 391
-                        </li>
-                        <li style="color: black; font-size: 20px;">            
-                            LOOK &nbsp&nbsp&nbsp; = (left) 208 , (right) 314
-                        </li>
-                        <li style="color: black; font-size: 20px;">            
-                            C-LOOK = (left) 316 , (right) 341
-                        </li>
-                    </ol>
-                </p>
+                </br><hr></br>
+                <p style="color: #bdbdbd; text-align: justify; font-size: 20px;">Enter the track numbers upto 200.</p></br>
+                
+                <div >
+                    <label for="frames" style="color: #bdbdbd; font-size: 21px;">Current Track Position :</label>
+                    <div class="wrap-input40">
+                        <input class="input40" type="text" id="frames" placeholder="Enter current track position">
+                        <span class="focus-input40"></span>
+                    </div>
+                    <label for="istring" style="color: #bdbdbd; font-size: 21px;">Track Number:</label>
+                    <div class="wrap-input40 mb-5">
+                        <input class="input40" id="inputname" type="text" placeholder="Enter queue contains track number">
+                        <span class="focus-input40"></span>
+                    </div>
+                </div>
+
+                <div >
+                    <section class="left">
+                    
+                    <button class="contact100-form-btn submit" id="show" type='button'>
+                        <span>
+                            Show Graph
+                        </span>
+                    </button>
+                </section>
+                </div>
+
                 <div id="chartContainer" style="height: 300px; width: 100%;">
                 </div>
                 <div>
                     <script>
-                        window.onload = function () {
-                        
-                        var chart = new CanvasJS.Chart("chartContainer", {
+                        function graph () {
+
+                            var dummy = document.getElementById('inputname').value.split(" ");
+                            var ctrack = document.getElementById("frames").value;
+
+                            //SSTF
+                            var arr = new Array(dummy.length);
+
+                            for(var i = 0; i < dummy.length; i++)
+                            {
+                                var y = dummy[i];
+                                arr[i] = parseInt(y);
+                            } 
+
+                            //SCAN , C-SCAN , LOOK
+                            var size = dummy.length;
+                            
+                            var arr1 = new Array(size);
+                            for(var j=0; j<size; j++)
+                            {
+                                var z = dummy[j];
+                                arr1[j] = parseInt(z);
+                            } 
+
+                            //FCFS
+                            dummy.unshift(ctrack);
+                       
+                            var seek=0;
+
+                            for(i=1;i<dummy.length;i++)
+                            {
+                                seek=seek+Math.abs(dummy[i]-dummy[i-1]);
+                            }
+                            console.log(seek);
+
+                            //SSTF
+                            console.log(dummy);
+                            console.log(arr);
+                            
+                            var a = parseInt(ctrack);
+                            var f = a;
+
+                            var b = arr;
+                            var c = b;
+
+                            var ans = Array();
+
+                            for(var i=0;i<b.length;i++)
+                            {
+                                var e = c.map(function(v,i) { return Math.abs(v - f); });
+                                var t = c[e.indexOf(Math.min(...e))];
+                                c = c.filter(item => item !== t)
+                                f=t;
+                                ans.push(t);
+                            }
+                            ans.unshift(a);
+                            console.log(ans);
+
+                            var seek1=0;
+
+                            for(i=1;i<ans.length;i++)
+                            {
+                                seek1=seek1+Math.abs(ans[i]-ans[i-1]);
+                            }
+
+                            //SCAN-left
+                            var dir1 = left;
+                            
+                            ctrack = parseInt(ctrack); 
+                            var disk_size = 200;
+
+                            var left=[];
+                            var right=[];
+
+                            left.push(0);
+                            
+                            for (var i = 0; i < size; i++) 
+                            {
+                                if (arr1[i] < ctrack)
+                                    left.push(arr1[i]);
+                                if (arr1[i] > ctrack)
+                                    right.push(arr1[i]);
+                            }
+
+                            left.sort(function(a, b){return a - b});
+                            right.sort(function(a, b){return a - b});
+                            console.log("left->",left);
+                            console.log("right->",right);
+      
+                            var cur_track;
+                            var seek_sequence = Array();
+
+                            for (var i = left.length - 1; i >= 0; i--) 
+                                    {
+                                        cur_track = left[i];
+ 
+                                        // appending current track to seek sequence
+                                        seek_sequence.push(cur_track);
+                                    }
+                            for (var i = 0; i < right.length; i++) 
+                                    {   
+                                        cur_track = right[i];
+            
+                                        // appending current track to seek sequence
+                                        seek_sequence.push(cur_track);
+                                    }
+                            
+                            seek_sequence.unshift(ctrack);
+
+                            var seek2=0;
+
+                            for(i=1;i<seek_sequence.length;i++)
+                            {
+                                seek2=seek2+Math.abs(seek_sequence[i]-seek_sequence[i-1]);
+                            }
+
+
+                            //SCAN-right
+                            var dir2 = right;
+
+                            var left1=[];
+                            var right1=[];
+
+                            right1.push(disk_size-1);
+                            
+                            for (var i = 0; i < size; i++) 
+                            {
+                                if (arr1[i] < ctrack)
+                                    left1.push(arr1[i]);
+                                if (arr1[i] > ctrack)
+                                    right1.push(arr1[i]);
+                            }
+
+                            left1.sort(function(a, b){return a - b});
+                            right1.sort(function(a, b){return a - b});
+                            console.log("left1->",left1);
+                            console.log("right1->",right1);
+      
+                            var cur_track1;
+                            var seek_sequence1 = Array();
+
+                            for (var i = 0; i < right1.length; i++) 
+                                    {   
+                                        cur_track1 = right1[i];
+            
+                                        // appending current track to seek sequence
+                                        seek_sequence1.push(cur_track1);
+                                    }
+                            for (var i = left1.length - 1; i >= 0; i--) 
+                                    {
+                                        cur_track1 = left1[i];
+ 
+                                        // appending current track to seek sequence
+                                        seek_sequence1.push(cur_track1);
+                                    }
+                            
+                            
+                            seek_sequence1.unshift(ctrack);
+
+                            var seek3=0;
+
+                            for(i=1;i<seek_sequence1.length;i++)
+                            {
+                                seek3=seek3+Math.abs(seek_sequence1[i]-seek_sequence1[i-1]);
+                            }
+
+                            //C-SCAN-left
+                            var left2=[];
+                            var right2=[];
+
+                            left2.push(0);
+                            right2.push(disk_size-1);
+                            
+                            for (var i = 0; i < size; i++) 
+                            {
+                                if (arr1[i] < ctrack)
+                                    left2.push(arr1[i]);
+                                if (arr1[i] > ctrack)
+                                    right2.push(arr1[i]);
+                            }
+
+                            left2.sort(function(a, b){return a - b});
+                            right2.sort(function(a, b){return a - b});
+                            console.log("left2->",left2);
+                            console.log("right2->",right2);
+      
+                            var cur_track2;
+                            var seek_sequence2 = Array();
+                            
+                            for (var i = left2.length-1; i >= 0; i--) 
+                                    {
+                                        cur_track2 = left2[i];
+ 
+                                        // appending current track to seek sequence
+                                        seek_sequence2.push(cur_track2);
+                                    }
+                            for (var i = right2.length-1; i >= 0; i--) 
+                                    {   
+                                        cur_track2 = right2[i];
+            
+                                        // appending current track to seek sequence
+                                        seek_sequence2.push(cur_track2);
+                                    }
+                            seek_sequence2.unshift(ctrack);
+                            
+                            var seek4=0;
+
+                            for(i=1;i<seek_sequence2.length;i++)
+                            {
+                                seek4=seek4+Math.abs(seek_sequence2[i]-seek_sequence2[i-1]);
+                            }
+                            
+
+                            //C-SCAN-right
+                            var cur_track3;
+                            var seek_sequence3 = Array();
+                            
+                            for (var i = 0; i < right2.length; i++) 
+                                    {   
+                                        cur_track3 = right2[i];
+            
+                                        // appending current track to seek sequence
+                                        seek_sequence3.push(cur_track3);
+                                    }
+                            for (var i = 0; i < left2.length; i++) 
+                                    {
+                                        cur_track3 = left2[i];
+ 
+                                        // appending current track to seek sequence
+                                        seek_sequence3.push(cur_track3);
+                                    }
+                            
+                            seek_sequence3.unshift(ctrack);
+                            var seek5=0;
+
+                            for(i=1;i<seek_sequence3.length;i++)
+                            {
+                                seek5=seek5+Math.abs(seek_sequence3[i]-seek_sequence3[i-1]);
+                            }
+
+                            //LOOK-left
+                            var left3=[];
+                            var right3=[];
+
+                            for (var i = 0; i < size; i++) 
+                            {
+                                if (arr1[i] < ctrack)
+                                    left3.push(arr1[i]);
+                                if (arr1[i] > ctrack)
+                                    right3.push(arr1[i]);
+                            }
+
+                            left3.sort(function(a, b){return a - b});
+                            right3.sort(function(a, b){return a - b});
+                            console.log("left3->",left3);
+                            console.log("right3->",right3);
+      
+                            var cur_track4;
+                            var seek_sequence4 = Array();
+
+                            for (var i = left3.length - 1; i >= 0; i--) 
+                                    {
+                                        cur_track4 = left3[i];
+ 
+                                        // appending current track to seek sequence
+                                        seek_sequence4.push(cur_track4);
+                                    }
+                            for (var i = 0; i < right3.length; i++) 
+                                    {   
+                                        cur_track4 = right3[i];
+            
+                                        // appending current track to seek sequence
+                                        seek_sequence4.push(cur_track4);
+                                    }
+                            seek_sequence4.unshift(ctrack);
+
+                            var seek6=0;
+
+                            for(i=1;i<seek_sequence4.length;i++)
+                            {
+                                seek6=seek6+Math.abs(seek_sequence4[i]-seek_sequence4[i-1]);
+                            }
+
+                            //LOOK-right
+                            var cur_track5;
+                            var seek_sequence5 = Array();
+
+                            for (var i = 0; i < right3.length; i++) 
+                                    {   
+                                        cur_track5 = right3[i];
+            
+                                        // appending current track to seek sequence
+                                        seek_sequence5.push(cur_track5);
+                                    }
+                            for (var i = left3.length - 1; i >= 0; i--) 
+                                    {
+                                        cur_track5 = left3[i];
+ 
+                                        // appending current track to seek sequence
+                                        seek_sequence5.push(cur_track5);
+                                    }
+                            
+                            seek_sequence5.unshift(ctrack);
+
+                            var seek7=0;
+
+                            for(i=1;i<seek_sequence5.length;i++)
+                            {
+                                seek7=seek7+Math.abs(seek_sequence5[i]-seek_sequence5[i-1]);
+                            }
+
+                            //C-LOOK-left
+                            
+                            var cur_track6;
+                            var seek_sequence6 = Array();
+
+                            for (var i = left3.length-1; i >=0; i--) 
+                                    {
+                                        cur_track6 = left3[i];
+ 
+                                        // appending current track to seek sequence
+                                        seek_sequence6.push(cur_track6);
+                                    }
+                                for (var i = right3.length-1; i >=0; i--) 
+                                    {   
+                                        cur_track6 = right3[i];
+            
+                                        // appending current track to seek sequence
+                                        seek_sequence6.push(cur_track6);
+                                    }
+                            
+                            seek_sequence6.unshift(ctrack);
+
+                            var seek8=0;
+
+                            for(i=1;i<seek_sequence6.length;i++)
+                            {
+                                seek8=seek8+Math.abs(seek_sequence6[i]-seek_sequence6[i-1]);
+                            }
+
+                            //C-LOOK-right
+
+                            var cur_track7;
+                            var seek_sequence7 = Array();
+
+                            for (var i = 0; i < right3.length; i++) 
+                                    {   
+                                        cur_track7 = right3[i];
+            
+                                        // appending current track to seek sequence
+                                        seek_sequence7.push(cur_track7);
+                                    }
+                            for (var i = 0; i < left3.length; i++) 
+                                    {
+                                        cur_track7 = left3[i];
+ 
+                                        // appending current track to seek sequence
+                                        seek_sequence7.push(cur_track7);
+                                    }
+                            seek_sequence7.unshift(ctrack);
+
+                            var seek9=0;
+
+                            for(i=1;i<seek_sequence7.length;i++)
+                            {
+                                seek9=seek9+Math.abs(seek_sequence7[i]-seek_sequence7[i-1]);
+                            }
+                            
+
+                            //graph
+                            var chart = new CanvasJS.Chart("chartContainer", {
                             animationEnabled: true,
                             exportEnabled: true,
                             theme: "dark2", 
@@ -121,26 +491,28 @@
                             data: [{
                                 type: "column", 
                                 indexLabel: "{y}", 
-                                indexLabelFontColor: "#e0e0e0",
+                                indexLabelFontColor: "#bdbdbd",
                                 indexLabelFontSize: 10,
                                 indexLabelPlacement: "outside",
                                 dataPoints: [
-                                    {  label: "FCFS", y: 642 },
-                                    {  label: "SSTF", y: 208 },
-                                    {  label: "SCAN(left)", y: 240 },
-                                    {  label: "SCAN(right)", y: 332 },
-                                    {  label: "C-SCAN(left)", y: 366 },
-                                    {  label: "C-SCAN(right)", y: 391 },
-                                    {  label: "LOOK(left)", y: 208 },
-                                    {  label: "LOOK(right)", y: 314 },
-                                    {  label: "C-LOOK(left)", y: 316 },
-                                    {  label: "C-LOOK(right)", y: 341 }
+                                    {  label: "FCFS", y: seek },
+                                    {  label: "SSTF", y: seek1 },
+                                    {  label: "SCAN(left)", y: seek2 },
+                                    {  label: "SCAN(right)", y: seek3 },
+                                    {  label: "C-SCAN(left)", y: seek4 },
+                                    {  label: "C-SCAN(right)", y: seek5 },
+                                    {  label: "LOOK(left)", y: seek6 },
+                                    {  label: "LOOK(right)", y: seek7 },
+                                    {  label: "C-LOOK(left)", y: seek8 },
+                                    {  label: "C-LOOK(right)", y: seek9 }
                                 ]
                             }]
                         });
                         chart.render();
                         
                         }
+                        var subButton2 = document.getElementById('show');
+                        subButton2.addEventListener('click', graph, false); 
                         </script>
                 </div>
                 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
