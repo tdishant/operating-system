@@ -5,7 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <!-- <meta name="description" content="" />
         <meta name="author" content="" /> -->
-        <title>OS Virtual Lab</title>
+        <title>producer consumer description</title>
+        <link rel = "icon" href = 
+        "../title_icon.jpeg" 
+                type = "image/x-icon">
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -33,10 +36,10 @@
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../index.html">Home</a></li>
                         
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../index.html#about">About</a></li>
                         
                         <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li> -->
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Algorithms</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../index.html#portfolio">Algorithms</a></li>
                         <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li> -->
                     </ul>
                 </div>
@@ -65,45 +68,41 @@
                                 </p><br></br>
                             <h4 style="color: white; font-weight: bold;">Solution:</h4><br>
                             <p style="color: white;"> The producer is to either go to sleep or discard data if the buffer is full. The next time the consumer removes an item from the buffer, it notifies the producer, who starts to fill the buffer again. In the same way, the consumer can go to sleep if it finds the buffer to be empty. The next time the producer puts data into the buffer, it wakes up the sleeping consumer. An inadequate solution could result in a deadlock where both processes are waiting to be awakened.
-                            </p><br></br>
+                            </p><br>
                     </div>
                     
                 </div>
             </div>
-            <h3 class="text-uppercase text-white font-weight-bold" style="font-weight: bolder;">Steps</h3>
-                <div class="row">
-                    <div class="col-md-5 ">
-                      <div class="thumbnail">
-                        <img src="./img/prod.jpg" alt="Lights" style="width:100%">
-                        <div class="caption">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-7 " style="margin-top: 15%;">
-                        <h3 class="text-uppercase text-white font-weight-bold text-center pb-3" style="font-weight: bolder;">Input</h3> 
-                        <p style="color: white;">
-                            To take input enter space separated value and for new row and for new row enter in the new line
-                        </p>
-                    </div>
+            <h3>
+                <a href="../producer.html" class="button00" style="font-weight: bold;">Demo</a>
+            </h3>
+            <h3 class="text-uppercase text-white font-weight-bold py-3">Steps</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="./img/producer_input_3.png" class="img-fluid" alt="Lights" style="width:100%">
                 </div>
-                <div class="row">
-                    <div class="col-md-6" style="margin-top: 15%;">
-                        <h3 class="text-uppercase text-white font-weight-bold text-center pb-3" style="font-weight: bolder;">Output</h3> 
-                        <p style="color: white;">
-                            The output will the process safe sequence and if there is a deadlock condition than deadlock status will be shown. 
-                        </p>
-                        <p style="color: white;">
-                            The input given by the user is also shown in the graph.
-                        </p>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="thumbnail">
-                          <img src="./img/prodout.jpg" alt="Lights" style="width:100%">
-                          <div class="caption">
-                          </div>
-                        </div>
-                    </div>
+                <div class="col-md-6" style="margin-top: 10%;">
+                    <h3 class="text-uppercase text-white font-weight-bold text-center pb-3" style="font-weight: bolder;">Input</h3> 
+                    <p style="color: white;">
+                        Enter the space, number of producer and number of consumer respectively.<br><br>
+                        For producing process click producer and for consuming process click consumer and there is also a reset button to reset whole page. 
+                    </p>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" style="margin-top: 10%;">
+                    <h3 class="text-uppercase text-white font-weight-bold text-center pb-3" style="font-weight: bolder;">Output</h3> 
+                    <p style="color: white;">
+                            According to the user input the process will be produced if there is a space or alert will be shown.
+                    </p>
+                    <p style="color: white;">
+                        If there are less process than the number of consumer than alert will be shown else the process will be consumed.   
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <img src="./img/producer_input_3.png" class="img-fluid" alt="Lights" style="width:100%">
+                </div>
+            </div>
         </div>        <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>

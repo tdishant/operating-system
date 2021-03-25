@@ -5,7 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <!-- <meta name="description" content="" />
         <meta name="author" content="" /> -->
-        <title>OS Virtual Lab</title>
+        <title>turn variable description</title>
+        <link rel = "icon" href = 
+        "../title_icon.jpeg" 
+                type = "image/x-icon">
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -33,10 +36,10 @@
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../index.html">Home</a></li>
                         
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../index.html#about">About</a></li>
                         
                         <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li> -->
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Algorithms</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../index.html#portfolio">Algorithms</a></li>
                         <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li> -->
                     </ul>
                 </div>
@@ -50,64 +53,52 @@
                 <div class="hidden1" id="show">
                     <div class="container" style="text-align: left;">
                         <p class="text-white justify-content-center">
-                                Software mechanism implemented at user mode-only for two processes. It is a lock shared by two processes.
-
-
+                            Software mechanism implemented at user mode-only for two processes. It is a lock shared by two processes.
                             <h4 style="color: white; font-weight: bold;">Analysis of Turn Variable approach: </h4><br>
                             <p style="color: white;"> 
                                 Mutual Exclusion: <br>
                                 The strict alternation approach provides mutual exclusion in every case. This procedure works only for two processes. The pseudo code is different for both of the processes. The process will only enter when it sees that the turn variable is equal to its Process ID otherwise not Hence No process can enter in the critical section regardless of its turn.
                                 <br>
-                            
                             Progress: <br>
                             Progress is not guaranteed in this mechanism. If P0 doesn't want to get enter into the critical section on its turn then P1 got blocked for infinite time. P1 has to wait for so long for its turn since the turn variable will remain 0 until P0 assigns it to 1. <br>
-
                             Portability <br>
                             The solution provides portability. It is a pure software mechanism implemented at user mode and doesn't need any special instruction from the Operating System. <br>
-                                
                             </p>
-
-
-                            </p>
-
+                        </p>
                     </div>
                     
                 </div>
             </div>
-            <h3 class="text-uppercase text-white font-weight-bold" style="font-weight: bolder;">Steps</h3>
-                <div class="row">
-                    <div class="col-md-5 ">
-                      <div class="thumbnail">
-                        <img src="./img/ternin.jpg" alt="Lights" style="width:100%">
-                        <div class="caption">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-7 " style="margin-top: 15%;">
-                        <h3 class="text-uppercase text-white font-weight-bold text-center pb-3" style="font-weight: bolder;">Input</h3> 
-                        <p style="color: white;">
-                            To take input enter space separated value and for new row and for new row enter in the new line
-                        </p>
-                    </div>
+        <h3>
+            <a href="../turnvari.html" class="button00" style="font-weight: bold;">Demo</a>
+        </h3>
+        <h3 class="text-uppercase text-white font-weight-bold py-3">Steps</h3>
+            <div class="row">
+                <div class="col-md-6 ">
+                    <img src="./img/ternin.jpg" class="img-fluid" alt="Lights" style="width:100%">
                 </div>
-                <div class="row">
-                    <div class="col-md-6" style="margin-top: 15%;">
-                        <h3 class="text-uppercase text-white font-weight-bold text-center pb-3" style="font-weight: bolder;">Output</h3> 
-                        <p style="color: white;">
-                            The output will the process safe sequence and if there is a deadlock condition than deadlock status will be shown. 
-                        </p>
-                        <p style="color: white;">
-                            The input given by the user is also shown in the graph.
-                        </p>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="thumbnail">
-                          <img src="./img/ternout.jpg" alt="Lights" style="width:100%">
-                          <div class="caption">
-                          </div>
-                        </div>
-                    </div>
+                <div class="col-md-6 " style="margin-top: 10%;">
+                    <h3 class="text-uppercase text-white font-weight-bold text-center pb-3" style="font-weight: bolder;">Input</h3> 
+                    <p style="color: white;">
+                        Initially there will be already 2 process in the initial state.<br><br>
+                        For processing a process click on the respective process button and the process will be added to the respective state. 
+                    </p>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" style="margin-top: 10%;">
+                    <h3 class="text-uppercase text-white font-weight-bold text-center pb-3" style="font-weight: bolder;">Output</h3> 
+                    <p style="color: white;">
+                        The output will be according to the user input on the respective process for different states and according to the turn state.  
+                    </p>
+                    <p style="color: white;">
+                        Turn variable is shown above added state. 
+                    </p>
+                </div>
+                <div class="col-md-6">
+                        <img src="./img/ternout.jpg" class="img-fluid" alt="Lights" style="width:100%">
+                </div>
+            </div>
         </div>        <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>

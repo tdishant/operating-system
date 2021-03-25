@@ -383,10 +383,10 @@ section {
 }
 #mainNav .navbar-nav .nav-item .nav-link:hover,
 #mainNav .navbar-nav .nav-item .nav-link:active {
-  color: #f4623a;
+  color: #0652c5;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active {
-  color: #f4623a !important;
+  color: #0652c5 !important;
 }
 @media (min-width: 992px) {
   #mainNav {
@@ -417,16 +417,51 @@ section {
     color: #212529;
   }
   #mainNav.navbar-scrolled .navbar-brand:hover {
-    color: #f4623a;
+    color: #0652c5;
   }
   #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link {
     color: #212529;
   }
   #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
-    color: #f4623a;
+    color: #0652c5;
   }
 }
 
+.button00 {
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  background-color: #2471a3;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: all 0.2s;
+  height: 35px;
+  padding-bottom: 4px;
+  border: 2px solid white;
+  width: 12%;
+  height: 10%;
+}
+
+.button00:hover {
+  background-color: #148f77;
+  text-decoration: none;
+  color: white;
+  width: 16%;
+}
+@media all and (max-width: 30em) {
+  .button00 {
+    display: block;
+    margin: 0.2em auto;
+    text-decoration: none;
+  }
+}
 body,
 html {
   width: 100%;
