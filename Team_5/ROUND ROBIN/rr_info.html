@@ -55,7 +55,23 @@
             <li>Once a process is executed for a given time period, it is preempted and other process executes for a given time period.</li>
             <li> Context switching is used to save states of preempted processes.</li>
         </ul>
+        <h3>Advantages</h3>
+        <ul class="RR_adv">
+            <li>All the jobs get a fair allocation of CPU.</li>
+            <li>It deals with all process without any priority</li>
+            <li>This scheduling method does not depend upon burst time. That's why it is easily implementable on the system.</li>
+            <li>Once a process is executed for a specific set of the period, the process is preempted, and another process executes for that given time period.</li>
+            <li>It gives the best performance in terms of average response time.</li>
+        </ul>
 
+        <h3>Disadvantages</h3>
+        <ul class="RR_disadv">
+            <li>If slicing time of OS is low, the processor output will be reduced.</li>
+            <li>This method spends more time on context switching</li>
+            <li>Its performance heavily depends on time quantum.</li>
+            <li>Decreases comprehension</li>
+            <li>Finding a correct time quantum is a quite difficult task in this system.</li>
+        </ul>
         <h3>Example</h3><br>
         <h5>Time quantum: 4</h5>
         <table border="2">
@@ -129,7 +145,7 @@
 
         <h3>Final Table</h3>
         <table border="2">
-            <th>process</th>
+            <th>Process</th>
             <th>Arrival Time</th>
             <th>Burst Time</th>
             <th>Complition Time</th>
@@ -192,23 +208,7 @@
             </tr>
         </table>
 
-        <h3>Advantages</h3>
-        <ul class="RR_adv">
-            <li>All the jobs get a fair allocation of CPU.</li>
-            <li>It deals with all process without any priority</li>
-            <li>This scheduling method does not depend upon burst time. That's why it is easily implementable on the system.</li>
-            <li>Once a process is executed for a specific set of the period, the process is preempted, and another process executes for that given time period.</li>
-            <li>It gives the best performance in terms of average response time.</li>
-        </ul>
-
-        <h3>Disadvantages</h3>
-        <ul class="RR_disadv">
-            <li>If slicing time of OS is low, the processor output will be reduced.</li>
-            <li>This method spends more time on context switching</li>
-            <li>Its performance heavily depends on time quantum.</li>
-            <li>Decreases comprehension</li>
-            <li>Finding a correct time quantum is a quite difficult task in this system.</li>
-        </ul>
+        
 
     </div>
 

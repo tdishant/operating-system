@@ -62,10 +62,28 @@
                 the selection process takes place again.</li>
             <li> Due to the high value of the average waiting time, this algorithm is not optimal.</li>
         </ul>
+        <h3>Advantages</h3>
+        <ul class="lrtf_adv">
+            <li>This algorithm is easy to implement and simple</li>
+            <li>This algorithm is starvation-free because all processes get a fair share of CPU.</li>
+            <li>All the processes get completed by the time the longest job reaches its completion.</li>
+        </ul>
+
+        <h3>Disadvantages</h3>
+        <ul class="lrtf_disadv">
+            <li>With this algorithm, the average waiting time and turnaround time are too high, even if burst time is
+                less for each process.</li>
+            <li>In this process with less burst time(smaller processes) need to wait for CPU in order to finish
+                processes with larger burst size.</li>
+            <li>The valuable time of CPU is consumed by context switch; which can be utilized for the execution of
+                processes.</li>
+            <li>Not an ideal technique for time-sharing systems.</li>
+            <li>Because of its simplicity, FCFS is not very efficient.</li>
+        </ul>
 
         <h3>Example</h3>
         <table border="2">
-            <th>process</th>
+            <th>Process</th>
             <th>Arrival Time</th>
             <th>Burst Time</th>
 
@@ -180,24 +198,7 @@
             </tr>
         </table>
 
-        <h3>Advantages</h3>
-        <ul class="lrtf_adv">
-            <li>This algorithm is easy to implement and simple</li>
-            <li>This algorithm is starvation-free because all processes get a fair share of CPU.</li>
-            <li>All the processes get completed by the time the longest job reaches its completion.</li>
-        </ul>
-
-        <h3>Disadvantages</h3>
-        <ul class="lrtf_disadv">
-            <li>With this algorithm, the average waiting time and turnaround time are too high, even if burst time is
-                less for each process.</li>
-            <li>In this process with less burst time(smaller processes) need to wait for CPU in order to finish
-                processes with larger burst size.</li>
-            <li>The valuable time of CPU is consumed by context switch; which can be utilized for the execution of
-                processes.</li>
-            <li>Not an ideal technique for time-sharing systems.</li>
-            <li>Because of its simplicity, FCFS is not very efficient.</li>
-        </ul>
+        
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
