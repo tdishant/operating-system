@@ -1,0 +1,80 @@
+#mainNav .navbar-nav .nav-item .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0 1rem;
+}
+
+.navbar-light .navbar-brand {
+    color: rgba(255,255,255,.9);
+}
+
+#mainNav .navbar-brand {
+    font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 700;
+    
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+    
+    font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 700;
+    font-size: 0.9rem;
+    
+}
+
+
+.RR_info{
+    padding-top: 50px;
+    padding-left: 10px;
+}
+
+/* @font-face {
+    font-family: Ubuntu-Bold;
+    src: url("../fonts/ubuntu/Ubuntu-Bold.ttf");
+  } */
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+body {
+    background-color: #000000;
+    background-image: linear-gradient(90deg, #000000 0%, #04619f 74%);
+  font-family: "Roboto", sans-serif;
+  color: white;
+  background-attachment: fixed;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+p {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 1.3rem;
+}
+
+ul {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 1.3rem;
+}
+
+ol {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 1.3rem;
+}
+
+table{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 1.3rem;
+    text-align: center;
+}

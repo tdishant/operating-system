@@ -247,6 +247,12 @@ function execute() {
 
 
     // Completion time
+    let mg1 = document.getElementById("graph-container1");
+    mg1.innerHTML=`
+            <center>
+            <canvas id="ProcessChart-ct" width="800" height="650"></canvas>
+            </center>
+    `;
     var ctx=document.getElementById('ProcessChart-ct');{
         var myChart=new Chart(ctx,{
             type:'bar',
@@ -259,10 +265,9 @@ function execute() {
                     label:'Completion Time',
                     data:completion_time,
                     pointBackgroundColor:'red',
-                    borderColor:'rgba(0,255,0)',
-
-                    backgroundColor: 'rgb(255,0,0)',
-                    pointBorderWidth:3,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1,
                     pointRadius:4,
                     fill:true,
                     }
@@ -299,6 +304,12 @@ function execute() {
     }
 
     // Waiting time
+    let mg2 = document.getElementById("graph-container2");
+    mg2.innerHTML=`
+            <center>
+            <canvas id="ProcessChart-wt" width="800" height="650"></canvas>
+            </center>
+    `;
     var wtx=document.getElementById('ProcessChart-wt');{
         var myChart=new Chart(wtx,{
             type:'bar',
@@ -311,10 +322,9 @@ function execute() {
                     label:'Waiting Time',
                     data:waiting_time,
                     pointBackgroundColor:'red',
-                    borderColor:'rgba(0,255,0)',
-
-                    backgroundColor: 'rgb(255,0,0)',
-                    pointBorderWidth:3,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1,
                     pointRadius:4,
                     fill:true,
                     }
@@ -351,6 +361,12 @@ function execute() {
     }
 
     // Turn around time
+    let mg3 = document.getElementById("graph-container3");
+    mg3.innerHTML=`
+            <center>
+            <canvas id="ProcessChart-tat" width="800" height="650"></canvas>
+            </center>
+    `;
     var tatx=document.getElementById('ProcessChart-tat');{
         var myChart=new Chart(tatx,{
             type:'bar',
@@ -363,10 +379,9 @@ function execute() {
                     label:'Turn around Time',
                     data:turnaround_time,
                     pointBackgroundColor:'red',
-                    borderColor:'rgba(0,255,0)',
-
-                    backgroundColor: 'rgb(255,0,0)',
-                    pointBorderWidth:3,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1,
                     pointRadius:4,
                     fill:true,
                     }
@@ -403,6 +418,12 @@ function execute() {
     }
 
     // Response time
+    let mg4 = document.getElementById("graph-container4");
+    mg4.innerHTML=`
+            <center>
+            <canvas id="ProcessChart-rt" width="800" height="650"></canvas>
+            </center>
+    `;
     var rtx=document.getElementById('ProcessChart-rt');{
         var myChart=new Chart(rtx,{
             type:'bar',
@@ -415,10 +436,9 @@ function execute() {
                     label:'response Time',
                     data:response_time,
                     pointBackgroundColor:'red',
-                    borderColor:'rgba(0,255,0)',
-
-                    backgroundColor: 'rgb(255,0,0)',
-                    pointBorderWidth:3,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1,
                     pointRadius:4,
                     fill:true,
                     }
