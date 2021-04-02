@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information of Priority(PRE) Algorithm</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../CSS_Team_5/main.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../CSS_Team_5/main.css">
+    <link rel="stylesheet" href="priority_preemptive_info.css">
+    <style>
+        table{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        font-size: 1.3rem;
+        text-align: center;
+        border: 2px solid white;
+    }
+    </style>
+      <link rel = "icon" href = "../Images_Team_5/color-circle.png" type = "image/x-icon">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-1" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#"><i class="fa fa-files-o"
+                    aria-hidden="true"></i> Priority-Preemptive</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../Main_Page_Team_5.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../PRIORITY PREEMPTIVE/priority_preemptive.html">Demo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="priority_preemptive">
+        <h1>Priority (Preemptive) Algorithm</h1>
+        <p>
+            This is the Preemptive version of Priority scheduling. In this type of scheduling the processes which are present in ready queue are compared and the process with highest priority is selected for execution.The difference between non-Preemptive Priority Scheduling and Preemptive Priority Scheduling is that in non-preemptive if a process comes inside CPU then it can't be preempted and it will execute completely. However, in case of Preemptive Priority Scheduling a process which is executing inside CPU can be preempted if a higher priority process comes in the ready queue.
+        </p>
+
+        <h3>Characteristics</h3>
+        <p>
+            <ul>
+                <li>Priority scheduling is one of the most common scheduling algorithms in batch systems.</li>
+                <li>Each process is assigned a priority. Process with highest priority is to be executed first and so on.</li>
+                <li>Processes with same priority are executed on first come first served basis.</li>
+                <li>Priority can be decided based on memory requirements, time requirements or any other resource requirement.</li>
+            </ul>
+        </p>
+
+        <h3>Advantages</h3>
+        <ul>
+            <li>It is one of the simplest and easiest form of CPU Scheduling Algorithm.</li>
+            <li>Process having high priority doesn't have to wait for a long time.</li>
+            <li>It is used in the places where time varies eventually along with resources.</li>
+        </ul>
+
+        <h3>Disadvantages</h3>
+        <ul>
+            <li>In this type of algorithm, process having highest priority compared to currently executing process have to wait till
+            execution ends</li>
+            <li>Some low priority processes can be in waiting state for an indefinite time.</li>
+            <li>On system crash, low priority processes shall not be scheduled.</li>
+            <li>Resource Utilization in parallel is not possible here.</li>
+        </ul>
+
+        <h3>Example</h3>
+
+        <table class="que-table" border="2px">
+            <tr>
+                <th>Process</th>
+                <th>Priority</th>
+                <th>Arrival Time</th>
+                <th>Burst Time</th>
+            </tr>
+            <tr>
+                <td>P1</td>
+                <td>10(L)</td>
+                <td>0</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>P2</td>
+                <td>20</td>
+                <td>1</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>P3</td>
+                <td>30</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>P4</td>
+                <td>40(H)</td>
+                <td>4</td>
+                <td>10</td>
+            </tr>
+        </table>
+
+        <h3>Working</h3>
+
+        <ul>
+            <li>Since at T = 0 only P1 has arrived, it will get executed first for 1 time unit despite having the lowest priority</li>
+            <li>At T = 1 P2 has arrived and it has higher priority than P1,So P2 will go in the running queue and P1 will be premepted to ready queue.</li>
+            <li>At T = 2 P3 has arrived and it has higher priority than P2,So P3 will go in the running queue and P2 will be premepted to ready queue.</li>
+            <li>At T = 3 no new process will come, so P3 will run for another time unit and it will be terminated</li>
+            <li>At T=4 P4 will come in ready queue and it has highest priority and it will run for 1 time unit and get terminated. </li>
+            <li>At T =5 all processes are arrived, so P2 will come in running queue from ready queue and it will run for 3 time unit and get terminated.</li>
+            <li>At T=8 only P1 process is there in ready queue and it will run for 4 time unit and get terminated.</li>
+             <li>At T=12 all process will be terminated.</li>
+        </ul>
+
+        <h3>Gantt Chart</h3>
+
+        <table border="2">
+            <th>P1</th>
+            <th>P2</th>
+            <th>P3</th>
+            <th>P4</th>
+            <th>P2</th>
+            <th>P1</th>
+            <tr>
+                <td>0 - 1</td>
+                <td>1 - 2</td>
+                <td>2 - 4</td>
+                <td>4 - 5</td>
+                <td>5 - 8</td>
+                <td>8 - 12</td>
+            </tr>
+        </table>
+
+        <h3>Final Table</h3>
+
+        <table border="2px">
+            <tr>
+                <th>Process</th>
+                <th>Priority</th>
+                <th>Arrival Time</th>
+                <th>Burst Time</th>
+                <th>Completion Time</th>
+                <th>Turn Around Time</th>
+                <th>Waiting Time</th>
+                <th>Response Time</th>
+            </tr>
+
+            <tr>
+                <td>P1</td>
+                <td>10(L)</td>
+                <td>0</td>
+                <td>5</td>
+                <td>12</td>
+                <td>12</td>
+                <td>7</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>P2</td>
+                <td>20</td>
+                <td>1</td>
+                <td>4</td>
+                <td>8</td>
+                <td>7</td>
+                <td>3</td>
+                <td>0</td>
+                
+            </tr>
+            <tr>
+                <td>P3</td>
+                <td>30</td>
+                <td>2</td>
+                <td>2</td>
+                <td>4</td>
+                <td>2</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>P4</td>
+                <td>40(H)</td>
+                <td>4</td>
+                <td>1</td>
+                <td>5</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+</body>
+<script src="../scripts.js"></script>
+</html>

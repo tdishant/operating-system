@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="../Team_5/styles.css" rel="stylesheet" />
+    <link rel = "icon" href = "../Team_5/Images_Team_5/color-circle.png" type = "image/x-icon">
 </head>
 
 <body id="page-top">
@@ -40,6 +41,7 @@
                     <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li> -->
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Algorithms</a></li>
                     <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li> -->
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../home.html">OS Virtual Lab</a></li>
                 </ul>
             </div>
         </div>
@@ -55,14 +57,14 @@
                 <div class="col-lg-8 align-self-baseline">
                     <p class="text-white-75 font-weight-light mb-5">In an operating system, CPU scheduling is a process
                         of determining which process will own CPU for execution while another process is on hold.</p>
-                    <a class="btn btn-primary btn-xl js-scroll-trigger" style="background: #f4623a;" href="#about">Find
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" style="background: #F18628;" href="#about">Find
                         Out More</a>
                 </div>
             </div>
         </div>
     </header>
     <!-- About-->
-    <section class="page-section py-0" id="about" style="background: #f4623a; display: flex;">
+    <section class="page-section py-0" id="about" style="background:#F18628; display: flex;">
         <div style="width: 100%; background: white;" class="" id="img1">
             <div class="container px-5 pt-5">
                 <img style="width: 550px; height: 400px; margin-bottom: 40px;" class="" src="../Team_5/Images_Team_5/Capture.JPG" alt="">
@@ -71,9 +73,9 @@
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <h2 class="text-white mt-0">Brief Explanation</h2>
-                    <hr class="divider light my-4" />
-                    <p class="text-white-50 mb-4">The main task of CPU scheduling is to make sure that whenever the CPU
+                    <h2 class="text-dark mt-4">Brief Explanation</h2>
+                    <hr my-4" />
+                    <p class="text-black-50 mb-4">The main task of CPU scheduling is to make sure that whenever the CPU
                         remains idle, the OS at least select one of the processes available in the ready queue for
                         execution. The selection process will be carried out by the CPU scheduler. It selects one of the
                         processes in memory that are ready for execution..</p>
@@ -90,12 +92,18 @@
             <div class="row no-gutters">
                 <div class="col-lg-4 col-sm-7 text-center test pic1">
                     <div>
+                        <h2 class="text-uppercase text-white font-weight-bold mb-0">Algorithms</h2>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-7 text-center test pic1">
+                    <div>
                         <h2 class="text-uppercase text-white font-weight-bold mb-0">FCFS</h2>
                         <div class="hidden1" id="show">
                             <div class="container">
                                 <p class="text-white">This is the easiest and most simple CPU scheduling algorithm.</p>
                             </div>
-                            <a class="btn btn-light btn-l" href="#">More Info</a>
+                            <a class="btn btn-light btn-l" href="FCFS/fcfs_info.html">More Info</a>
                             <a class="btn btn-light btn-l" href="../Team_5/FCFS/fcfsProcessScheduling.html">Demo</a>
                         </div>
                     </div>
@@ -108,7 +116,7 @@
                                 <p class="text-white">As the name suggests,the process with the shortest execution time
                                     should be selected for execution next.</p>
                             </div>
-                            <a class="btn btn-light btn-l" href="#">More Info</a>
+                            <a class="btn btn-light btn-l" href="SJF/sjf_info.html">More Info</a>
                             <a class="btn btn-light btn-l" href="../Team_5/SJF/sjf_new.html">Demo</a>
                         </div>
                     </div>
@@ -133,7 +141,7 @@
                                 <p class="text-white"> As the name suggests this algorithm is based upon the fact that
                                     the process with the largest burst time is processed first. .</p>
                             </div>
-                            <a class="btn btn-light btn-l" href="#">More Info</a>
+                            <a class="btn btn-light btn-l" href="LJF/ljf_info.html">More Info</a>
                             <a class="btn btn-light btn-l" href="../Team_5/LJF/ljf_new.html">Demo</a>
                         </div>
                     </div>
@@ -147,7 +155,7 @@
                                     with highest priority is to be executed first.
                                 </p>
                             </div>
-                            <a class="btn btn-light btn-l" href="#">More Info</a>
+                            <a class="btn btn-light btn-l" href="PRIORITY NON-PREEMPTIVE/priority_non_preemptive_info.html">More Info</a>
                             <a class="btn btn-light btn-l" href="../Team_5/PRIORITY NON-PREEMPTIVE/priority.html">Demo</a>
                         </div>
                     </div>
@@ -161,7 +169,7 @@
                                     with highest priority in the queue is to be executed first.
                                 </p>
                             </div>
-                            <a class="btn btn-light btn-l" href="#">More Info</a>
+                            <a class="btn btn-light btn-l" href="PRIORITY PREEMPTIVE/priority_preemtive_info.html">More Info</a>
                             <a class="btn btn-light btn-l" href="../Team_5/PRIORITY PREEMPTIVE/priority_preemptive.html">Demo</a>
                         </div>
                     </div>
@@ -174,7 +182,7 @@
                             <div class="container">
                                 <p class="text-white">Round robin is the oldest, simplest scheduling algorithm.</p>
                             </div>
-                            <a class="btn btn-light btn-l" href="#">More Info</a>
+                            <a class="btn btn-light btn-l" href="ROUND ROBIN/rr_info.html">More Info</a>
                             <a class="btn btn-light btn-l" href="../Team_5/ROUND ROBIN/rrProcessScheduling.html">Demo</a>
                         </div>
                     </div>
@@ -189,7 +197,7 @@
                                     maximum remaining time and then process it.
                                 </p>
                             </div>
-                            <a class="btn btn-light btn-l" href="#">More Info</a>
+                            <a class="btn btn-light btn-l" href="LRTF/lrtf_info.html">More Info</a>
                             <a class="btn btn-light btn-l" href="../Team_5/LRTF/lrtf_new.html">Demo</a>
                         </div>
                     </div>
@@ -203,7 +211,7 @@
                                     processing time remaining is executed first.
                                 </p>
                             </div>
-                            <a class="btn btn-light btn-l" href="#">More Info</a>
+                            <a class="btn btn-light btn-l" href="../Team_5/SRTF/srtf_info.html">More Info</a>
                             <a class="btn btn-light btn-l" href="../Team_5/SRTF/srtfProcessScheduling.html">Demo</a>
                         </div>
                     </div>

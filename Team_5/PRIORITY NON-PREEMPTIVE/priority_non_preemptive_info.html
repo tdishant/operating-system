@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information of Priority(NON-PRE) Algorithm</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../CSS_Team_5/main.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../CSS_Team_5/main.css">
+    <link rel="stylesheet" href="priority_non_preemptive_info.css">
+    <style>
+        table{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        font-size: 1.3rem;
+        text-align: center;
+        border: 2px solid white;
+    }
+    </style>
+      <link rel = "icon" href = "../Images_Team_5/color-circle.png" type = "image/x-icon">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-1" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#"><i class="fa fa-files-o"
+                    aria-hidden="true"></i> Priority Non-Preemptive </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../Main_Page_Team_5.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../PRIORITY NON-PREEMPTIVE/priority.html">Demo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="priority_non_preemptive">
+        <h1>Priority (Non-Preemptive) Algorithm</h1>
+        <p>
+            Priority Scheduling is a method of scheduling processes that is based on priority. In this algorithm, the scheduler
+            selects the tasks to work as per the priority.
+            The processes with higher priority should be carried out first, whereas jobs with equal priorities are carried out on FCFS basis. Priority depends upon memory requirements, time requirements, etc.
+            In Priority (Non-Preemptive) scheduling method, the CPU has been allocated to a specific process. The process that keeps the CPU
+            busy, will release the CPU either by switching context or terminating.
+        </p>
+
+        <h3>Characteristics</h3>
+        <p>
+            <ul>
+                <li>Priority scheduling is a non-preemptive algorithm and one of the most common scheduling algorithms in batch systems.</li>
+                <li>Each process is assigned a priority. Process with highest priority is to be executed first and so on.</li>
+                <li>Processes with same priority are executed on first come first served basis.</li>
+                <li>Priority can be decided based on memory requirements, time requirements or any other resource requirement.</li>
+            </ul>
+        </p>
+
+        <h3>Advantages</h3>
+        <ul>
+            <li>It is one of the simplest and easiest form of CPU Scheduling Algorithm.</li>
+            <li>Process having high priority doesn't have to wait for a long time.</li>
+            <li>It is used in the places where time varies eventually along with resources.</li>
+        </ul>
+
+        <h3>Disadvantages</h3>
+        <ul>
+            <li>In this type of algorithm, process having highest priority compared to currently executing process have to wait till
+            execution ends</li>
+            <li>Some low priority processes can be in waiting state for an indefinite time.</li>
+            <li>On system crash, low priority processes shall not be scheduled.</li>
+            <li>Resource Utilization in parallel is not possible here.</li>
+        </ul>
+
+        <h3>Example</h3>
+
+        <table class="que-table" border="2px">
+            <tr>
+                <th>Process</th>
+                <th>Priority</th>
+                <th>Arrival Time</th>
+                <th>Burst Time</th>
+            </tr>
+            <tr>
+                <td>P1</td>
+                <td>0(L)</td>
+                <td>0</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>P2</td>
+                <td>4</td>
+                <td>1</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>P3</td>
+                <td>5</td>
+                <td>2</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>P4</td>
+                <td>10</td>
+                <td>3</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>P5</td>
+                <td>8</td>
+                <td>4</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>P6</td>
+                <td>17(H)</td>
+                <td>7</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>P7</td>
+                <td>9</td>
+                <td>8</td>
+                <td>4</td>
+            </tr>
+        </table>
+
+        <h3>Working</h3>
+
+        <ul>
+            <li>Step 0) Since at T = 0 only P1 has arrived, it will get executed first despite having the lowest priority</li>
+            <li>Step 1) At T = 4 P1 has executed completely and the processes P2, P3, P4 and P5 have arrived</li>
+            <li>Step 2) Out of processes P2, P3, P4 and P5, P4 has the highest priority hence it will get executed at T = 4</li>
+            <li>Step 3) At T = 11 P4 has executed completely and the processes P2, P3, P5, P6 and P7 are in the waiting queue</li>
+            <li>Step 4) Out of processes P2, P3, P5, P6 and P7, P6 has the highest priority hence it will get executed at T = 11</li>
+            <li>Step 5) At T = 16 P6 has executed completely and the processes P2, P3, P5 and P7 are in the waiting queue</li>
+            <li>Step 6) Out of processes P2, P3, P5 and P7, P7 has the highest priority hence it will get executed at T = 16</li>
+            <li>Step 7) At T = 20 P7 has executed completely and the processes P2, P3 and P5 are in the waiting queue</li>
+            <li>Step 8) Out of processes P2, P3 and P5, P5 has the highest priority hence it will get executed at T = 20</li>
+            <li>Step 9) At T = 26 P5 has executed completely and the processes P2 and P3 are in the waiting queue</li>
+            <li>Step 10) Out of processes P2 and P3, P3 has the highest priority hence it will get executed at T = 26</li>
+            <li>Step 11) At T = 32 P3 has executed completely and the process P2 is in the waiting queue</li>
+            <li>Step 12) Finally P2 will get executed at T = 32 and will get completely executed by T = 37</li>
+        </ul>
+
+        <h3>Gantt Chart</h3>
+
+        <table border="2">
+            <th>P1</th>
+            <th>P4</th>
+            <th>P6</th>
+            <th>P7</th>
+            <th>P5</th>
+            <th>P3</th>
+            <th>P2</th>
+            <tr>
+                <td>0 - 4</td>
+                <td>4 - 11</td>
+                <td>11 - 16</td>
+                <td>16 - 20</td>
+                <td>20 - 26</td>
+                <td>26 - 32</td>
+                <td>32 - 37</td>
+            </tr>
+        </table>
+
+        <h3>Final Table</h3>
+
+        <table border="2px">
+            <tr>
+                <th>Process</th>
+                <th>Priority</th>
+                <th>Arrival Time</th>
+                <th>Burst Time</th>
+                <th>Completion Time</th>
+                <th>Turn Around Time</th>
+                <th>Waiting Time</th>
+                <th>Response Time</th>
+            </tr>
+
+            <tr>
+                <td>P1</td>
+                <td>0(L)</td>
+                <td>0</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>P2</td>
+                <td>4</td>
+                <td>1</td>
+                <td>5</td>
+                <td>37</td>
+                <td>36</td>
+                <td>31</td>
+                <td>31</td>
+            </tr>
+            <tr>
+                <td>P3</td>
+                <td>5</td>
+                <td>2</td>
+                <td>6</td>
+                <td>32</td>
+                <td>30</td>
+                <td>24</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>P4</td>
+                <td>10</td>
+                <td>3</td>
+                <td>7</td>
+                <td>11</td>
+                <td>8</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>P5</td>
+                <td>8</td>
+                <td>4</td>
+                <td>6</td>
+                <td>26</td>
+                <td>22</td>
+                <td>16</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td>P6</td>
+                <td>17(H)</td>
+                <td>7</td>
+                <td>5</td>
+                <td>16</td>
+                <td>9</td>
+                <td>4</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>P7</td>
+                <td>9</td>
+                <td>8</td>
+                <td>4</td>
+                <td>20</td>
+                <td>12</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+        </table>
+
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+</body>
+<script src="../scripts.js"></script>
+
+</html>

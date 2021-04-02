@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information of SJF Algorithm</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../CSS_Team_5/main.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../CSS_Team_5/main.css">
+    <link rel="stylesheet" href="sjf_info.css">
+    <style>
+        table{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        font-size: 1.3rem;
+        text-align: center;
+        border: 2px solid white;
+    }
+    </style>
+      <link rel = "icon" href = "../Images_Team_5/color-circle.png" type = "image/x-icon">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-1" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#"><i class="fa fa-files-o"
+                    aria-hidden="true"></i> Shortest Job First </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../Main_Page_Team_5.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../SJF/sjf_new.html">Demo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sjf">
+        <h1>Shortest Job First Algorithm</h1>
+        <p>
+            Shortest Job First (SJF) is an algorithm in which the process having the smallest execution time is chosen for the next execution. This scheduling method can be preemptive or non-preemptive. It significantly reduces the average waiting time for other processes awaiting execution. The full form of SJF is Shortest Job First.
+        </p>
+
+        <h3>Characteristics</h3>
+        <p>
+            <ul>
+                <li>It is associated with each job as a unit of time to complete.</li>
+                <li>This algorithm method is helpful for batch-type processing, where waiting for jobs to complete is not critical.</li>
+                <li>It can improve process throughput by making sure that shorter jobs are executed first, hence possibly have a short turnaround time.</li>
+                <li>It improves job output by offering shorter jobs, which should be executed first, which mostly have a shorter turnaround time.</li>
+            </ul>
+        </p>
+
+        <h3>Advantages</h3>
+        <ul>
+            <li>It is optimal for minimizing the queuing time.</li>
+            <li>It is easy to implement in batch systems as we know in this we know the required CPU time.</li>
+            <li>It’s average waiting time, or AWT is minimum amongst all the scheduling algorithms.</li>
+        </ul>
+
+        <h3>Disadvantages</h3>
+        <ul>
+            <li>It is challenging to implement in the interactive system as we don’t know the required CPU time here.</li>
+            <li>Usually, run times are not known in this scheduling.</li>
+            <li>If the arrival time of the processes is different, i.e. different processes arrive at different time for the execution, then sometimes, the process which has shortest burst time will have to wait so that the current process can finish its performance. The reason behind this is its non-preemptive mode as in this the current process is not halted in between on arrival of shortest burst process.This brings the starvation problem which is solved by the process of ageing.</li>
+        </ul>
+
+        <h3>Example</h3>
+
+        <table class="que-table" border="2px">
+            <tr>
+                <th>Process</th>
+                <th>Arrival Time</th>
+                <th>Burst Time</th>
+            </tr>
+            <tr>
+                <td>P1</td>
+                <td>2</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>P2</td>
+                <td>5</td>
+                <td>2</td>  
+            </tr>
+            <tr>
+                <td>P3</td>
+                <td>1</td>
+                <td>8</td>  
+            </tr>
+            <tr>
+                <td>P4</td>
+                <td>0</td>
+                <td>3</td>    
+            </tr>
+            <tr>
+                <td>P5</td>
+                <td>4</td>
+                <td>4</td>
+            </tr>
+        
+        </table>
+
+        <h3>Working</h3>
+
+        <ul>
+            <li>Step 0) At time=0, P4 arrives and starts execution.</li>
+            <li>Step 1) At time= 1, Process P3 arrives. But, P4 still needs 2 execution units to complete. It will continue execution.</li>
+            <li>Step 2) At time =2, process P1 arrives and is added to the waiting queue. P4 will continue execution.</li>
+            <li>Step 3) At time = 3, process P4 will finish its execution. The burst time of P3 and P1 is compared. Process P1 is executed because its burst time is less compared to P3.</li>
+            <li>Step 4) At time = 4, process P5 arrives and is added to the waiting queue. P1 will continue execution.</li>
+            <li>Step 5) At time = 5, process P2 arrives and is added to the waiting queue. P1 will continue execution.</li>
+            <li>Step 6) At time = 9, process P1 will finish its execution. The burst time of P3, P5, and P2 is compared. Process P2 is executed because its burst time is the lowest.</li>
+            <li>Step 7) At time=10, P2 is executing and P3 and P5 are in the waiting queue.</li>
+            <li>Step 8) At time = 11, process P2 will finish its execution. The burst time of P3 and P5 is compared. Process P5 is executed because its burst time is lower.</li>
+            <li>Step 9) At time = 15, process P5 will finish its execution.</li>
+            <li>Step 10) At time = 23, process P3 will finish its execution.</li>
+        </ul>
+
+        <h3>Gantt Chart</h3>
+
+        <table border="2">
+            <th>P4</th>
+            <th>P1</th>
+            <th>P2</th>
+            <th>P5</th>
+            <th>P3</th>
+            <tr>
+                <td>0 - 3</td>
+                <td>3 - 9</td>
+                <td>9- 11</td>
+                <td>11 - 15</td>
+                <td>15 - 23</td>
+            </tr>
+        </table>
+
+        <h3>Final Table</h3>
+
+        <table border="2px">
+            <tr>
+                <th>Process</th>
+                <th>Arrival Time</th>
+                <th>Burst Time</th>
+                <th>Completion Time</th>
+                <th>Turn Around Time</th>
+                <th>Waiting Time</th>
+                <th>Response Time</th>
+            </tr>
+
+            <tr>
+                <td>P1</td>
+                <td>2</td>
+                <td>6</td>
+                <td>9</td>
+                <td>7</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>P2</td>
+                <td>5</td>
+                <td>2</td>
+                <td>11</td>
+                <td>6</td>
+                <td>4</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>P3</td>
+                <td>1</td>
+                <td>8</td>
+                <td>23</td>
+                <td>22</td>
+                <td>14</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>P4</td>
+                <td>0</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>P5</td>
+                <td>4</td>
+                <td>4</td>
+                <td>15</td>
+                <td>11</td>
+                <td>7</td>
+                <td>7</td>
+            </tr>
+        </table>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+</body>
+<script src="../scripts.js"></script>
+
+
+
+</html>

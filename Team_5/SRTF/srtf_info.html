@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information of SRTF Algorithm</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../CSS_Team_5/main.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../CSS_Team_5/main.css">
+    <link rel="stylesheet" href="srtf_info.css">
+    <style>
+        table{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        font-size: 1.3rem;
+        text-align: center;
+        border: 2px solid white;
+    }
+    </style>
+      <link rel = "icon" href = "../Images_Team_5/color-circle.png" type = "image/x-icon">
+</head>
+<body>
+    <div>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-1" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#"><i class="fa fa-files-o"
+                    aria-hidden="true"></i> Shortest Remaining Time First</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../Main_Page_Team_5.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../SRTF/srtfProcessScheduling.html">Demo</a></li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <br>
+    <br>
+
+</div>
+    
+    <div class="srtf_info" >
+    <div>
+        <h1>Shortest Remaining Time First (SRTF) CPU scheduling algorithm</h1>
+    </div>
+    <hr>
+
+    <div>
+        This Algorithm is the preemptive version of SJF scheduling. In SRTF, the execution of the process can be stopped after certain amount of time. At the arrival of every process, the short term scheduler schedules the process with the least remaining burst time among the list of available processes and the running process.
+
+        Once all the processes are available in the ready queue, No preemption will be done and the algorithm will work as SJF scheduling. The context of the process is saved in the Process Control Block when the process is removed from the execution and the next process is scheduled. This PCB is accessed on the next execution of this process.
+    </div>
+    <br>
+    <div>
+        <h2>Advantages</h2>
+        <li>SRTF algorithm makes the processing of the jobs faster than SJF algorithm, given it’s overhead charges are not counted.</li>
+        
+    </div>
+     <br>
+    <div>
+        <h2>Disadvantages</h2>
+        <li>The context switch is done a lot more times in SRTF than in SJF, and consumes CPU’s valuable time for processing. This adds up to it’s processing time and diminishes it’s advantage of fast processing.</li>
+        
+    </div>
+
+    <div>
+        <br>
+        <h2>Example</h2>
+        <p>Consider the following table of arrival time and burst time for four processes P1, P2, P3, P4, P5 and P6.</p>
+        <table border="2px" >
+            <thead>
+                <tr>
+                    <th>Process Name</th>
+                    <th>Arrival Time</th>
+                    <th>Burst time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>P1</th>
+                    <th>0</th>
+                    <th>8</th>
+                </tr>
+                <tr>
+                    <th>P2</th>
+                    <th>1</th>
+                    <th>4</th>
+                </tr>
+                <tr>
+                    <th>P3</th>
+                    <th>2</th>
+                    <th>2</th>
+                </tr>
+                <tr>
+                    <th>P4</th>
+                    <th>3</th>
+                    <th>1</th>
+                </tr>
+                <tr>
+                    <th>P5</th>
+                    <th>4</th>
+                    <th>3</th>
+                </tr>
+                <tr>
+                    <th>P6</th>
+                    <th>5</th>
+                    <th>2</th>
+                </tr>
+
+            </tbody>
+        </table>
+         <br>
+         <h2>Working</h2>
+         <p>
+            1. at time 0, the only available process is P1 with CPU burst time 8. This is the only available process in the list therefore it is scheduled.<br>
+            2. The next process arrives at time unit 1. Since the algorithm we are using is SRTF which is a preemptive one, the current execution is stopped and the scheduler checks for the process with the least burst time.
+            Till now, there are two processes available in the ready queue. The OS has executed P1 for one unit of time till now; the remaining burst time of P1 is 7 units. The burst time of Process P2 is 4 units. Hence Process P2 is scheduled on the CPU according to the algorithm.<br>
+            3. The next process P3 arrives at time unit 2. At this time, the execution of process P3 is stopped and the process with the least remaining burst time is searched. Since the process P3 has 2 unit of burst time hence it will be given priority over others. <br>
+            4. The Next Process P4 arrives at time unit 3. At this arrival, the scheduler will stop the execution of P4 and check which process is having least burst time among the available processes (P1, P2, P3 and P4). P1 and P2 are having the remaining burst time 7 units and 3 units respectively.
+            P3 and P4 are having the remaining burst time 1 unit each. Since, both are equal hence the scheduling will be done according to their arrival time. P3 arrives earlier than P4 and therefore it will be scheduled again. <br>
+            5. The Next Process P5 arrives at time unit 4. Till this time, the Process P3 has completed its execution and it is no more in the list. The scheduler will compare the remaining burst time of all the available processes. Since the burst time of process P4 is 1 which is least among all hence this will be scheduled. <br>
+            6. The Next Process P6 arrives at time unit 5, till this time, the Process P4 has completed its execution. We have 4 available processes till now, that are P1 (7), P2 (3), P5 (3) and P6 (2). The Burst time of P6 is the least among all hence P6 is scheduled. Since, now, all the processes are available hence the algorithm will now work same as SJF. P6 will be executed till its completion and then the process with the least remaining time will be scheduled. <br>
+
+            <h3>Note:</h3>
+            <p>Once all the processes arrive, No preemption is done and the algorithm will work as SJF.</p>
+         </p>
+         
+         <h3>Gantt Chart </h3>
+         <table border="2px">
+             <thead>
+                <tr>
+                    
+                    <th>P1</th>
+                    <th>P2</th>
+                    <th>P3</th>
+                    <th>P3</th>
+                    <th>P4</th>
+                    <th>P6</th>
+                    <th>P2</th>
+                    <th>P5</th>
+                    <th>P1</th>
+                </tr>
+             </thead>
+             <tbody>
+                 <tr>
+                     <th>0-1</th>
+                     <th>1-2</th>
+                     <th>2-3</th>
+                     <th>3-4</th>
+                     <th>4-5</th>
+                     <th>5-7</th>
+                     <th>7-10</th>
+                     <th>10-13</th>
+                     <th>13-20</th>
+                 </tr>
+             </tbody>
+             
+            </table>
+            
+            <h3> Final Table </h3>
+            <table border="2px">
+                <thead>
+                    <th>Process Name</th>
+                    <th>Arrival Time</th>
+                    <th>Burst time</th>
+                    <th>Completion Time</th>
+                    <th>Turn Around Time</th>
+                    <th>Response Time</th>
+                    <th>Waiting Time</th>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>P1</th>
+                        <th>0</th>
+                        <th>8</th>
+                        <th>20</th>
+                        <th>20</th>
+                        <th>0</th>
+                        <th>12</th>
+                    </tr>
+                    <tr>
+                        <th>P2</th>
+                        <th>1</th>
+                        <th>4</th>
+                        <th>10</th>
+                        <th>9</th>
+                        <th>1</th>
+                        <th>5</th>
+                    </tr>
+                    <tr>
+                        <th>P3</th>
+                        <th>2</th>
+                        <th>2</th>
+                        <th>4</th>
+                        <th>2</th>
+                        <th>2</th>
+                        <th>0</th>
+                    </tr>
+                    <tr>
+                        <th>P4</th>
+                        <th>3</th>
+                        <th>1</th>
+                        <th>5</th>
+                        <th>2</th>
+                        <th>4</th>
+                        <th>1</th>
+                    </tr>
+                    
+                    <tr>
+                        <th>P5</th>
+                        <th>4</th>
+                        <th>3</th>
+                        <th>13</th>
+                        <th>9</th>
+                        <th>10</th>
+                        <th>6</th>
+                    </tr>
+                    
+                    <tr>
+                        <th>P6</th>
+                        <th>5</th>
+                        <th>2</th>
+                        <th>7</th>
+                        <th>2</th>
+                        <th>5</th>
+                        <th>0</th>
+                    </tr>
+                </tbody>
+            </table>
+
+
+    </div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+</body>
+<script src="../scripts.js"></script>
+
+</html>

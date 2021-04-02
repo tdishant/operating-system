@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information of FCFS Algorithm</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../CSS_Team_5/main.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../CSS_Team_5/main.css">
+    <link rel="stylesheet" href="fcfs_info.css">
+    <style>
+        table{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        font-size: 1.3rem;
+        text-align: center;
+        border: 2px solid white;
+    }
+    </style>
+      <link rel = "icon" href = "../Images_Team_5/color-circle.png" type = "image/x-icon">
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-1" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#"><i class="fa fa-files-o"
+                    aria-hidden="true"></i> First Come First Serve </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../Main_Page_Team_5.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../FCFS/fcfsProcessScheduling.html">Demo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   <div class="fcfs_info">
+    <h1>FCFS Algorithm</h1>
+    <p>First Come First Serve (FCFS) is an operating system scheduling algorithm that automatically executes queued requests and processes in order of their arrival. It is the easiest and simplest CPU scheduling algorithm. In this type of algorithm, processes which requests the CPU first get the CPU allocation first. This is managed with a FIFO queue. The full form of FCFS is First Come First Serve.
+        As the process enters the ready queue, its PCB (Process Control Block) is linked with the tail of the queue and, when the CPU becomes free, it should be assigned to the process at the beginning of the queue.
+        </p>
+
+        <h3>Characteristics</h3>
+        <ul class = "fcfs_char">
+            <li>It supports non-preemptive and pre-emptive scheduling algorithm.</li> 
+            <li>Jobs are always executed on a first-come, first-serve basis.</li>  
+            <li> It is easy to implement and use.</li>
+            <li> This method is poor in performance, and the general wait time is quite high.</li>
+        </ul> 
+     
+        <h3>Example</h3>
+        <table border="2">
+            <th>process</th>
+            <th>Arrival Time</th>
+            <th>Burst Time</th>
+            
+            <tr>
+                <td>P1</td>
+                <td>2</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>P2</td>
+                <td>5</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>P3</td>
+                <td>1</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>P4</td>
+                <td>0</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>P5</td>
+                <td>4</td>
+                <td>4</td>
+            </tr>
+        </table>
+
+        <h3>Working</h3>
+        <ul class="fcfs_working">
+            <li>Step 0) The process begins with P4 which has arrival time 0</li>
+            <li>Step 1) At time=1, P3 arrives. P4 is still executing. Hence, P3 is kept in a queue.</li>
+            <li>Step 2) At time= 2, P1 arrives which is kept in the queue.</li>
+            <li>Step 3) At time=3, P4 process completes its execution.</li>
+            <li>Step 4) At time=4, P3, which is first in the queue, starts execution.</li>
+            <li>Step 5) At time =5, P2 arrives, and it is kept in a queue.</li>
+            <li>Step 6) At time 11, P3 completes its execution.</li>
+            <li>Step 7) At time=11, P1 starts execution. It has a burst time of 6. It completes execution at time interval 17</li>
+            <li>Step 8) At time=17, P5 starts execution. It has a burst time of 4. It completes execution at time=21</li>
+            <li>Step 9) At time=21, P2 starts execution. It has a burst time of 2. It completes execution at time interval 23</li>
+            <li>Step 9) After calculating Completion Time using above steps calculate Turn Around Time, Waiting Time and Response Time</li>
+        </ul>
+    <h3>Gantt Chart</h3>
+        <table border="2">
+            <th>P4</th>
+            <th>P3</th>
+            <th>P1</th>
+            <th>P5</th>
+            <th>P2</th>
+            <tr>
+                <td>0-3</td>
+                <td>3-11</td>
+                <td>11-17</td>
+                <td>17-21</td>
+                <td>21-23</td>
+            </tr>
+        </table>
+
+        <h3>Final Table</h3>
+        <table border="2">
+            <th>process</th>
+            <th>Arrival Time</th>
+            <th>Burst Time</th>
+            <th>Complition Time</th>
+            <th>Turn Around Time</th>
+            <th>Waiting Tme</th>
+           <th>Response Time</th>
+            <tr>
+                <td>P1</td>
+                <td>2</td>
+                <td>6</td>
+                <td>17</td>
+                <td>15</td>
+                <td>9</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>P2</td>
+                <td>5</td>
+                <td>3</td>
+                <td>23</td>
+                <td>18</td>
+                <td>15</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>P3</td>
+                <td>1</td>
+                <td>8</td>
+                <td>11</td>
+                <td>10</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>P4</td>
+                <td>0</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>P5</td>
+                <td>4</td>
+                <td>4</td>
+                <td>21</td>
+                <td>17</td>
+                <td>13</td>
+                <td>13</td>
+            </tr>
+        </table>
+
+        <h3>Advantages</h3>
+        <ul class = "fcfs_adv">
+            <li>The simplest form of a CPU scheduling algorithm</li> 
+            <li>Easy to program</li> 
+            <li>First come first served</li> 
+        </ul>
+
+         <h3>Disadvantages</h3>
+         <ul class = "fcfs_adv">
+            <li>It is a Non-Preemptive CPU scheduling algorithm, so after the process has been allocated to the CPU, it will never release the CPU until it finishes executing.</li>
+            <li>The Average Waiting Time is high.</li>
+            <li>Short processes that are at the back of the queue have to wait for the long process at the front to finish.</li>
+            <li>Not an ideal technique for time-sharing systems.</li>
+            <li>Because of its simplicity, FCFS is not very efficient.</li>
+        </ul>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+</body>
+<script src="../scripts.js"></script>
+</html>

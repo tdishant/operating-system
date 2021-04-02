@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information of LRTF Algorithm</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../CSS_Team_5/main.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../CSS_Team_5/main.css">
+    <link rel="stylesheet" href="lrtf_info.css">
+    <style>
+        table{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        font-size: 1.3rem;
+        text-align: center;
+        border: 2px solid white;
+    }
+    </style>
+      <link rel = "icon" href = "../Images_Team_5/color-circle.png" type = "image/x-icon">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-1" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#"><i class="fa fa-files-o"
+                    aria-hidden="true"></i> Longest Remaining Time First </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../Main_Page_Team_5.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../LRTF/lrtf_new.html">Demo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="lrtf_info">
+        <h1>LRTF Algorithm</h1>
+        <p>The Longest Remaining time First(LRTF) scheduling is the preemptive version of Longest Job First(LJF)
+            scheduling. This scheduling algorithm is used by the operating system in order to schedule incoming
+            processes so that they can be executed in a systematic way. With this algorithm, the process having the
+            maximum remaining time is processed first. In this, we will check for the maximum remaining time after an
+            interval of time(say 1 unit) that is there another process having more Burst Time arrived up to that time.</p>
+
+        <h3>Characteristics</h3>
+        <ul class="lrtf_char">
+            <li>It is a CPU scheduling algorithm that is used to determine the process to be executed first among all
+                incoming processes in a systematic way.</li>
+            <li>This algorithm follows the preemptive approach because in this CPU is allocated to any process only for
+                a fixed slice of time.</li>
+            <li>In this algorithm, processes are selected on the basis of the highest burst time(the one with the
+                highest burst time is processed first) and this process runs till the fixed slice of time. After that,
+                the selection process takes place again.</li>
+            <li> Due to the high value of the average waiting time, this algorithm is not optimal.</li>
+        </ul>
+        <h3>Advantages</h3>
+        <ul class="lrtf_adv">
+            <li>This algorithm is easy to implement and simple</li>
+            <li>This algorithm is starvation-free because all processes get a fair share of CPU.</li>
+            <li>All the processes get completed by the time the longest job reaches its completion.</li>
+        </ul>
+
+        <h3>Disadvantages</h3>
+        <ul class="lrtf_disadv">
+            <li>With this algorithm, the average waiting time and turnaround time are too high, even if burst time is
+                less for each process.</li>
+            <li>In this process with less burst time(smaller processes) need to wait for CPU in order to finish
+                processes with larger burst size.</li>
+            <li>The valuable time of CPU is consumed by context switch; which can be utilized for the execution of
+                processes.</li>
+            <li>Not an ideal technique for time-sharing systems.</li>
+            <li>Because of its simplicity, FCFS is not very efficient.</li>
+        </ul>
+
+        <h3>Example</h3>
+        <table border="2">
+            <th>Process</th>
+            <th>Arrival Time</th>
+            <th>Burst Time</th>
+
+            <tr>
+                <td>P1</td>
+                <td>0</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>P2</td>
+                <td>1</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>P3</td>
+                <td>3</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>P4</td>
+                <td>5</td>
+                <td>3</td>
+            </tr>
+        </table>
+
+        <h3>Working</h3>
+        <ol class="lrtf_working">
+            <li>The First step is to sort the processes according to their Arrival time in increasing order</li>
+            <li>The next step is to choose the process that least arrival time but having the most Burst Time. After
+                that process it for 1 unit. After one unit you need to check if up to that time of execution; any other
+                process is arrived or not</li>
+            <li>Just repeat the above steps until the execution of all processes.</li>
+        </ol>
+        <h3>Gantt Chart</h3>
+        <table border="2">
+            <th>P1</th>
+            <th>P2</th>
+            <th>P2</th>
+            <th>P2</th>
+            <th>P2</th>
+            <th>P4</th>
+            <th>P1</th>
+            <th>P2</th>
+            <th>P3</th>
+            <th>P4</th>
+            <th>P1</th>
+            <th>P2</th>
+            <th>P3</th>
+            <th>P4</th>
+            <tr>
+                <td>0-1</td>
+                <td>1-2</td>
+                <td>2-3</td>
+                <td>3-4</td>
+                <td>4-5</td>
+                <td>5-6</td>
+                <td>6-7</td>
+                <td>7-8</td>
+                <td>8-9</td>
+                <td>9-10</td>
+                <td>10-11</td>
+                <td>11-12</td>
+                <td>12-13</td>
+                <td>13-14</td>
+            </tr>
+        </table>
+
+        <h3>Final Table</h3>
+        <table border="2">
+            <th>process</th>
+            <th>Arrival Time</th>
+            <th>Burst Time</th>
+            <th>Complition Time</th>
+            <th>Turn Around Time</th>
+            <th>Waiting Tme</th>
+            <th>Response Time</th>
+            <tr>
+                <td>P1</td>
+                <td>0</td>
+                <td>3</td>
+                <td>11</td>
+                <td>11</td>
+                <td>8</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>P2</td>
+                <td>1</td>
+                <td>6</td>
+                <td>12</td>
+                <td>11</td>
+                <td>5</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>P3</td>
+                <td>3</td>
+                <td>2</td>
+                <td>13</td>
+                <td>10</td>
+                <td>8</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>P4</td>
+                <td>5</td>
+                <td>3</td>
+                <td>14</td>
+                <td>9</td>
+                <td>6</td>
+                <td>0</td>
+            </tr>
+        </table>
+
+        
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+</body>
+<script src="../scripts.js"></script>
+
+</html>

@@ -1,7 +1,7 @@
 body {
   /* display: flex; */
   margin: 0;
-}
+}   
 
 .left {
   width: 35%;
@@ -36,11 +36,12 @@ div {
 
 table {
   display: table;
-  width: 100%;
+  width: 80%;
   table-layout: fixed;
   margin-top: 10px;
-  border: 2px solid white;
+  /* border: 2px solid white; */
   text-align: center;
+  background-color :#494949;
 }
 
 /* table tr {
@@ -50,6 +51,9 @@ table {
 table tr td {
   display: block;
 } */
+
+
+
 
 @font-face {
   font-family: Ubuntu-Bold;
@@ -319,7 +323,7 @@ td {
   font-weight: 300;
   font-size: 12px;
   color: #fff;
-  border: 2px solid white;
+  border: 1px solid white;
 }
 
 .tbl-header {
@@ -335,6 +339,7 @@ body {
   background: -webkit-linear-gradient(left, #bbd2c5, #536976, #292e49);
   background: linear-gradient(to right, #bbd2c5, #536976, #292e49);
   font-family: "Roboto", sans-serif;
+  background-attachment: fixed;
 }
 
 section {
@@ -447,3 +452,11 @@ li {
 h6 {
   text-align: center;
 }
+
+#scheduling-table th{
+  text-align: center;
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+

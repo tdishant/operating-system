@@ -10,22 +10,22 @@
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <link rel="stylesheet" href="../CSS_Team_5/main.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<link rel = "icon" href = "../Images_Team_5/color-circle.png" type = "image/x-icon">
 </head>
 
 <body>
     
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-1" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="../Main_Page_Team_5.html#page-top"><i class="fa fa-files-o"
-                    aria-hidden="true"></i> Process Scheduling Algorithms</a>
+            <a class="navbar-brand js-scroll-trigger" href="#"><i class="fa fa-files-o"
+                    aria-hidden="true"></i> Longest Remaining Time First </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto my-2 my-lg-0">
                     <li class="nav-item"><a class="nav-link" href="../Main_Page_Team_5.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Algorithms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../LRTF/lrtf_info.html">Info</a></li>
                 </ul>
             </div>
         </div>
@@ -50,8 +50,11 @@
                         <span class="focus-input100"></span>
                     </div>
                     
+                    <p>&nbsp&nbsp&nbsp&nbsp;</p>
                     <button type="button" id="addRow" class="contact100-form-btn submit" onclick="addRow()">Add a Row</button>
+                    <p>&nbsp&nbsp&nbsp&nbsp;</p>
                     <button type="button" id="delRow" class="contact100-form-btn submit" onclick="delRow()">Delete a Row</button>
+                    <p>&nbsp&nbsp&nbsp&nbsp;</p>
                     <button type="button" id="execute" class="contact100-form-btn submit" onclick="execute()">Execute</button>
                 </div>
             </div>
@@ -60,7 +63,7 @@
             <span class="contact100-form-title pt-3 pb-0">Output</span>
             <div id="carouselExampleIndicators" class="carousel slide d-none" data-interval="false"></div>
 
-            <table id="scheduling-table" border="2px">
+            <table class="table table-dark pt-3 pb-0"id="scheduling-table" border="2px">
                 <thead>
                     <tr>
                         <th colspan="7">
@@ -71,7 +74,7 @@
                         <th>Process Name</th>
                         <th>Arrival Time</th>
                         <th>Burst time</th>
-                        <th>Completion time</th>
+                        <th>Comple- tion time</th>
                         <th>Turn Around Time</th>
                         <th>Response Time</th>
                         <th>Waiting Time</th>
@@ -126,37 +129,45 @@
     </div>
 
 
-    <table id="process-schedule" border="2px">
+    <table class="table table-dark pt-3 pb-0"id="process-schedule" border="2px">
         <tr id="process-number"></tr>
         <tr id="process-time"></tr>
     </table>
 
-    <div id="graph-container" style="padding: 50px;">
-        <center>
+    <div id="graph-container1">
+        <!-- <center>
             <canvas id="ProcessChart-ct" width="800" height="650"></canvas>
-        </center>
+        </center> -->
     </div>
 
-    <div id="graph-container" style="padding: 50px;">
-        <center>
+    <div id="graph-container2">
+        <!-- <center>
             <canvas id="ProcessChart-wt" width="800" height="650"></canvas>
-        </center>
+        </center> -->
     </div>
 
-    <div id="graph-container" style="padding: 50px;">
-        <center>
+    <div id="graph-container3" >
+        <!-- <center>
             <canvas id="ProcessChart-tat" width="800" height="650"></canvas>
-        </center>
+        </center> -->
     </div>
 
-    <div id="graph-container" style="padding: 50px;">
-        <center>
+    <div id="graph-container4">
+        <!-- <center>
             <canvas id="ProcessChart-rt" width="800" height="650"></canvas>
-        </center>
+        </center> -->
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
 
 </body>
-<script src="../LRTF/lrtf_new.js"></script>
+<script src="lrtf_new.js"></script>
 <script src="../Chart/canvasjs.min.js"></script>
 <script src="../Chart/Chart.min.js" defer></script>
+<script src="../scripts.js"></script>
 </html>
