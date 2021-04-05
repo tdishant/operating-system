@@ -33,11 +33,14 @@ function exit_state(id){
     x.remove();
     lock=0;
     flag[id-1]=0;
-
+    flag[turn+1] = 1;
+    console.log(turn-1);
     if(id==1){
         document.getElementById('flag1').innerHTML='<i class="fas fa-flag mr-2"></i>Flag1: '+(flag[0]);
+        document.getElementById('flag2').innerHTML='<i class="fas fa-flag mr-2"></i>Flag2: '+(flag[1]);
     }
     else{
+        document.getElementById('flag1').innerHTML='<i class="fas fa-flag mr-2"></i>Flag1: '+(flag[0]);
         document.getElementById('flag2').innerHTML='<i class="fas fa-flag mr-2"></i>Flag2: '+(flag[1]);
     }
     var y=document.getElementById('exit');
@@ -52,7 +55,10 @@ function entry_state(id){
     x.remove();
     var y=document.getElementById('entry');
     y.innerHTML+='<button class=" btn btn-dark p-3 btn-lg fourth mr-4" id = '+id+' onclick="critical_state(this.id)">P'+id+'</button>';
-
+    flag[0] = 0;
+    flag[1] = 0;
+    document.getElementById('flag1').innerHTML='<i class="fas fa-flag mr-2"></i>Flag1: '+(flag[0]);
+    document.getElementById('flag2').innerHTML='<i class="fas fa-flag mr-2"></i>Flag2: '+(flag[1]);
 }
 
 function reset(){
