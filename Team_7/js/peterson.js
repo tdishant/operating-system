@@ -10,7 +10,6 @@ function critical_state(id){
         turn=1-id;
         flag[id-1]=1;
         lock=1;
-        document.getElementById('turn_state').innerHTML='<i class="fas fa-sync-alt mr-2"></i>Turn: '+(turn+2);
         if(id==1){
             document.getElementById('flag1').innerHTML='<i class="fas fa-flag mr-2"></i>Flag1: '+(flag[0]);
         }
@@ -35,6 +34,7 @@ function exit_state(id){
     flag[id-1]=0;
     flag[turn+1] = 1;
     console.log(turn-1);
+    document.getElementById('turn_state').innerHTML='<i class="fas fa-sync-alt mr-2"></i>Turn: '+(turn+2);
     if(id==1){
         document.getElementById('flag1').innerHTML='<i class="fas fa-flag mr-2"></i>Flag1: '+(flag[0]);
         document.getElementById('flag2').innerHTML='<i class="fas fa-flag mr-2"></i>Flag2: '+(flag[1]);
